@@ -104,7 +104,7 @@ B.Sc., Mathematics        | SSSIHL (_Mar 2017_)
 
 ___
 
-> ### Know More
+### Know More
 
 <p align='center'>
     <a href="https://www.linkedin.com/in/rohanyashraj/">
@@ -124,5 +124,14 @@ ___
 
 ### Download Resume 
 
+<p align='center'>
 <a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf"><img src="/assets/img/download.png" height="50" title="White flower" alt="Download Resume"></a> 
+</p>
 
+<!-- Auto width -->
+<button class="btn"><i class="fa fa-download"></i> Download</button>
+
+<!-- Full width -->
+<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
+
+<a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf"><img src="/assets/img/download.png" height="50" title="White flower" alt="Download Resume"></a> 
