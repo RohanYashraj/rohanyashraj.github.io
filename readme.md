@@ -125,7 +125,7 @@ ___
 ### Download Resume 
 
 <p align='center'>
-<a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf" target="_blank" rel="noopener noreferrer"><img src="/assets/img/download.png" height="50" title="White flower" alt="Download Resume"></a> 
+<a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf" target="_blank" rel="noopener noreferrer"><img src="/assets/img/download.png" height="50" title="Resume" alt="Download Resume"></a> 
 </p>
 
 <!-- Auto width -->
