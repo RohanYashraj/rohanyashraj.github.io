@@ -1,3 +1,5 @@
+@import "/assets/css/style.css";
+
 # Actuarial Data Scientist
 
 #### Technical Skills: Python, R, Excel, Git, AWS, SQL, Machine Learning, Deep Learning, Predictive Modelling
@@ -101,16 +103,28 @@ B.Sc., Mathematics        | SSSIHL (_Mar 2017_)
 
 - “Implementation of Correlation and Regression Models for Health Insurance Fraud in Covid-19 Environment using Actuarial and Data Science Techniques,” Int. J. Recent Technol. Eng. Sep. 2020
 - “A Comparative Study of Using Various Machine Learning and Deep Learning-Based Fraud Detection Models For Universal Health Coverage Schemes,” Int. J. Eng. Trends Technol., 2021
-- “TGANs with Machine Learning Models in Automobile Insurance Fraud Detection and Comparative Study with Other Data Imbalance Techniques,” Int. J. Recent Technol. Eng., Jan. 2021
-- “Integrating actuarial models with neural networks for building a fraud detection model for automobile insurance,” J. Emerg. Technol. Innov. Res., 2019
-- “A Framework for Comprehensive Fraud Management using Actuarial Techniques,” Int. J. Sci. Eng. Res. , 2019
-- “A proposed method with a use case to facilitate the decision of implementing new technology in insurance organizations to improve operational efficiency Variable name,” J. Emerg. Technol. Innov. Res., 2019
-- “A Proposed Model for Measuring Protection of Policyholders’ Interest at Industry Level,” IRDAI Journal, 2019
-- “Implementation of a Predictive Model for Fraud Detection in Motor Insurance using Gradient Boosting Method and Validation with Actuarial Models”, INCCES, 2019
 
-> ***Book Chapter***
+___
 
-- “Application of Cart-Based Modeling in Motor Insurance Fraud,” in Intelligent System Algorithms and
-Applications in Science and Technology, CRC Press, Taylor and Francis Publications, 2021
+> ### Know More
 
-[Research Gate](https://www.researchgate.net/profile/Rohan-Gupta-5)
+<p align='center'>
+    <a href="https://www.linkedin.com/in/rohanyashraj/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;&nbsp;
+    <a href="https://www.researchgate.net/profile/Rohan_Gupta54">
+        <img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" /></a>&nbsp;&nbsp;
+    <a href="https://orcid.org/0000-0003-2404-8036">
+        <img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" /></a>&nbsp;&nbsp;
+    <a href="https://www.instagram.com/rohanyashraj/">
+        <img src="https://img.shields.io/badge/instagram-E4405F?&style=for-the-badge&logo=instagram&logoColor=white" /></a>&nbsp;&nbsp;
+    <a href="https://www.facebook.com/rohanyashraj/">
+        <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>&nbsp;&nbsp;
+    <a href="https://scholar.google.com/citations?user=lZ-vk-EAAAAJ&hl=en">
+        <img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" /></a>&nbsp;&nbsp;
+</p>
+
+
+### Download Resume 
+
+<a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf"><img src="/assets/img/download.png" height="50" title="White flower" alt="Download Resume"></a> 
+
