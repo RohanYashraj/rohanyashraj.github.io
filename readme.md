@@ -1,5 +1,3 @@
-@import "/assets/css/style.css";
-
 # Actuarial Data Scientist
 
 #### Technical Skills: Python, R, Excel, Git, AWS, SQL, Machine Learning, Deep Learning, Predictive Modelling
