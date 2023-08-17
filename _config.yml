@@ -1,5 +1,5 @@
-title: Dr. Rohan Yashraj Gupta
-logo: /assets/img/headshot_circle_2.png
-description: Phd, ASA, AIA
-show_downloads: false
+title: Dr. Rohan Yashraj Gupta, Phd, ASA, AIA
+logo: /assets/img/headshot_circle_3.png
+# description: Phd, ASA, AIA
+show_downloads: true
 theme: jekyll-theme-minimal
