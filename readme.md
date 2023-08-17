@@ -3,10 +3,11 @@
 #### Technical Skills: Python, R, Excel, Git, AWS, SQL, Machine Learning, Deep Learning, Predictive Modelling
 
 ## Education
-Ph.D., Actuarial Science  | Sri Sathya Sai Institute of Higher Learning (_Nov 2021_)
-M.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 2019_)
-B.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 2017_)
+Ph.D., Actuarial Science  | SSSIHL[^1] (_Nov 2021_)
+M.Sc., Mathematics        | SSSIHL (_Mar 2019_)
+B.Sc., Mathematics        | SSSIHL (_Mar 2017_)
 
+[^1]: Sri Sathya Sai Institute of Higher Learning
 ## Work Experience
 **Actuarial Data Science Consultant @ RSA Actuarial Services (_Dec 2022 - Jun 2023_)**
 
