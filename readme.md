@@ -3,8 +3,8 @@
 #### Technical Skills: Python, R, Excel, Git, AWS, SQL, Machine Learning, Deep Learning, Predictive Modelling
 
 ## Education
-Ph.D., Actuarial Science  | Sri Sathya Sai Institute of Higher Learning (_Nov 2021_)								       		
-M.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 2019_)	 			        		
+Ph.D., Actuarial Science  | Sri Sathya Sai Institute of Higher Learning (_Nov 2021_)
+M.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 2019_)
 B.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 2017_)
 
 ## Work Experience
@@ -17,22 +17,22 @@ B.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 20
 
 **Actuarial Analyst @ SwissRe Bangalore (_Jun 2021 - Nov 2022_)**
 
-***Pricing***
+> ***Pricing***
 - Successfully supported 30+ quotes on pricing and experience studies for various products comprising – whole/term life assurance, critical illness benefit, disability benefits and hospitalization benefits for the South-East Asia market
 - Conducted impact testing on terms of trade assumptions for whole/life assurance products
 - Responsible for monitoring critical illness capacity for over 70+ quotes in the South-East Asia market
 
-***Experience studies***
+> ***Experience studies***
 - Conducted experience studies using R to derive A/E ratios, resulting in cost revisions that accurately reflected actual experience
 
-***R Modeling and dashboarding***
+> ***R Modeling and dashboarding***
 - Created and utilized R and Excel models for experience studies, premium trends calculation, and data visualization for life and health products for South-East asia market
 - Utilized R model to generate profit commission for various quotes
 
-***Product design***
+> ***Product design***
 - Collaborated with claims and underwriting teams for product discussions and design, resulting in the successful launch of three new products viz. critical illness products with very specialized product offering 
 
-***Communication and Presentation***
+> ***Communication and Presentation***
 - Presented results to team lead and wrote executive summary detailing pricing strategy to deliver to clients
 - Delivered a presentation on "Intro to Machine Learning using Decision Tree"
 
@@ -73,7 +73,7 @@ B.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 20
 - Speaker at 2022 Actuarial Colloquia, organized by Casualty Actuarial Society, with IAA and ASTIN
 
 ## Publications
-***Journal Papers***
+> ***Journal Papers***
 - “Implementation of Correlation and Regression Models for Health Insurance Fraud in Covid-19 Environment using Actuarial and Data Science Techniques,” Int. J. Recent Technol. Eng. Sep. 2020
 - “A Comparative Study of Using Various Machine Learning and Deep Learning-Based Fraud Detection Models For Universal Health Coverage Schemes,” Int. J. Eng. Trends Technol., 2021
 - “TGANs with Machine Learning Models in Automobile Insurance Fraud Detection and Comparative Study with Other Data Imbalance Techniques,” Int. J. Recent Technol. Eng., Jan. 2021
@@ -83,7 +83,7 @@ B.Sc., Mathematics        | Sri Sathya Sai Institute of Higher Learning (_Mar 20
 - “A Proposed Model for Measuring Protection of Policyholders’ Interest at Industry Level,” IRDAI Journal, 2019
 - “Implementation of a Predictive Model for Fraud Detection in Motor Insurance using Gradient Boosting Method and Validation with Actuarial Models”, INCCES, 2019
 
-***Book Chapter***
+> ***Book Chapter***
 - “Application of Cart-Based Modeling in Motor Insurance Fraud,” in Intelligent System Algorithms and 
 Applications in Science and Technology, CRC Press, Taylor and Francis Publications, 2021
 
