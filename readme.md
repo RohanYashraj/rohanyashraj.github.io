@@ -128,10 +128,9 @@ ___
 <a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf" target="_blank" rel="noopener noreferrer"><img src="/assets/img/download.png" height="50" title="Resume" alt="Download Resume"></a> 
 </p>
 
-<!-- Auto width -->
-<button class="btn"><i class="fa fa-download"></i> Download</button>
 
-<!-- Full width -->
-<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
+___
 
-<a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf"><img src="/assets/img/download.png" height="50" title="White flower" alt="Download Resume"></a> 
+___
+
+<img src="/assets/img/quote.png" alt="Italian Trulli">
