@@ -12,6 +12,12 @@ B.Sc., Mathematics        | SSSIHL (_Mar 2017_)
 
 ## Work Experience
 
+**Actuarial Team Lead @ Accenture (_Jul 2023 - Present_)**
+
+> ***Rater Delivery***
+
+- Working with the Technical Pricing team to help transition raters in legacy excel based models to latest data science models  
+
 **Actuarial Data Science Consultant @ RSA Actuarial Services (_Dec 2022 - Jun 2023_)**
 
 > ***Motor Insurance Fraud***
