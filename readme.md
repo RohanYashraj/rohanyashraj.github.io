@@ -1,6 +1,6 @@
 # Actuarial Data Scientist
 
-#### Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
+#### Technical Skills: Python, R, SQL, Machine Learning, Deep Learning, Excel, Predictive Modelling
 
 ## Education
 - Ph.D., Actuarial Science | Sri Sathya Sai Institute of Higher Learning (_Nov 2021_)								       		
@@ -8,13 +8,27 @@
 - B.Sc., Mathematics | Sri Sathya Sai Institute of Higher Learning (_Mar 2017_)
 
 ## Work Experience
-**Data Scientist @ Toyota Financial Services (_June 2022 - Present_)**
-- Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-- Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
+**Actuarial Data Science Consultant @ RSA Actuarial Services (_Dec 2022 - Jun 2023_)**
+- Motor Insurance Fraud 
+    - Developed and implemented a Machine Learning model to prioritize fraudulent cases, resulting in a 20% increase in the success rate of fraud applications.
+    - Conducted a thorough Full-Time Equivalent (FTE) analysis to estimate the necessary resources to secure previously neglected benefits.
+    - Created effective business rules based on SIRA reports that reduced the number of potentially fraudulent applications by 70%
 
-**Data Science Consultant @ Shawhin Talebi Ventures LLC (_December 2020 - Present_)**
-- Conducted data collection, processing, and analysis for novel study evaluating the impact of over 300 biometrics variables on human performance in hyper-realistic, live-fire training scenarios
-- Applied unsupervised deep learning approaches to longitudinal ICU data to discover novel sepsis sub-phenotypes
+**Actuarial Analyst @ SwissRe Bangalore (_Jun 2021 - Nov 2022_)**
+- Pricing
+    - Successfully supported 30+ quotes on pricing and experience studies for various products comprising – whole/term life assurance, critical illness benefit, disability benefits and hospitalization benefits for the South-East Asia market
+    - Conducted impact testing on terms of trade assumptions for whole/life assurance products
+    - Responsible for monitoring critical illness capacity for over 70+ quotes in the South-East Asia market
+- Experience studies
+    - Conducted experience studies using R to derive A/E ratios, resulting in cost revisions that accurately reflected actual experience
+- R Modeling and dashboarding
+    - Created and utilized R and Excel models for experience studies, premium trends calculation, and data visualization for life and health products for South-East asia market
+    - Utilized R model to generate profit commission for various quotes
+- Product design
+    - Collaborated with claims and underwriting teams for product discussions and design, resulting in the successful launch of three new products viz. critical illness products with very specialized product offering 
+- Communication and Presentation
+    - Presented results to team lead and wrote executive summary detailing pricing strategy to deliver to clients
+    - Delivered a presentation on "Intro to Machine Learning using Decision Tree"
 
 ## Projects
 ### Data-Driven EEG Band Discovery with Decision Trees
