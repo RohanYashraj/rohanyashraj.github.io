@@ -1,5 +1,13 @@
 # Actuarial Data Scientist
 
+## Summary
+
+- PhD in Actuarial Science with close to 6 years of work/project experience in the area of Actuarial Data Science 
+- Expertise in predictive modelling, data interpreting, and visualization with 8 international journal papers and 1 book chapter
+- Speaker in top Actuarial Data Science conferences such as 22nd Global Conference of Actuaries, 2021 Insurance Data Science, 2022 CAS Spring Meeting, 2022 CANW Spring Meet, 2022 ASTIN Actuarial Colloquia
+- Invited as a speaker for 2023 CAS International Webinar Series and also by the African Actuarial community
+- Developed over 5 web apps/dashboards for dynamic reporting and visualizations to aid in decision-making
+
 ## Technical Skills
 
 Python & R              | ⚫⚫⚫⚫⚪
