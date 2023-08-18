@@ -1,10 +1,13 @@
 # Actuarial Data Scientist
 
-#### Technical Skills: Python, R, Excel, Git, AWS, SQL, Machine Learning, Deep Learning, Predictive Modelling
+## Technical Skills
+
+| Python & R ⬤⬤⬤〇〇 	| ML & DL ⬤⬤⬤〇〇 	| Predictive Modelling ⬤⬤⬤⬤〇 	|
+| Excel ⬤⬤⬤⬤〇      	| Git & GitHub ⬤⬤⬤〇〇     	| Data Visualization ⬤⬤⬤⬤〇   	|
 
 ## Education
 
-Ph.D., Actuarial Science  | SSSIHL<sup>1</sup> (_Nov 2021_)
+Ph.D., Actuarial Science   | SSSIHL<sup>1</sup> (_Nov 2021_)
 M.Sc., Mathematics        | SSSIHL (_Mar 2019_)
 B.Sc., Mathematics        | SSSIHL (_Mar 2017_)
 
