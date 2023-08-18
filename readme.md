@@ -131,9 +131,6 @@ ___
 <a href="https://rohanyashraj.github.io/assets/files/rohan_resume.pdf" target="_blank" rel="noopener noreferrer"><img src="/assets/img/download.png" height="50" title="Resume" alt="Download Resume"></a> 
 </p>
 
-
-___
-
 ___
 
 <img src="/assets/img/quote.png" alt="Italian Trulli">
