@@ -2,8 +2,11 @@
 
 ## Technical Skills
 
-| Python & R ⬤⬤⬤〇〇 	| ML & DL ⬤⬤⬤〇〇 	| Predictive Modelling ⬤⬤⬤⬤〇 	|
-| Excel ⬤⬤⬤⬤〇      	| Git & GitHub ⬤⬤⬤〇〇     	| Data Visualization ⬤⬤⬤⬤〇   	|
+Python & R              | ⚫⚫⚫⚫⚪
+ML & DL                 | ⚫⚫⚫⚪⚪
+Predictive Modelling    | ⚫⚫⚫⚫⚪
+Data Visualization      | ⚫⚫⚫⚫⚪
+Git & GitHub            | ⚫⚫⚫⚪⚪
 
 ## Education
 
