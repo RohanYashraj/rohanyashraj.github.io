@@ -145,3 +145,13 @@ ___
 ___
 
 <img src="/assets/img/quote.png" alt="Italian Trulli">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRYKN0S7YB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRYKN0S7YB');
+</script>
