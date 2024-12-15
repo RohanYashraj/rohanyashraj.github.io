@@ -15,7 +15,7 @@ const Header = () => {
 
   console.log(pathname);
   return (
-    <header className="border-b border-b-hoverColor/50 bg-bodyColour text-white/80">
+    <header className="border-b border-b-hoverColor/50 bg-bodyColour text-white sticky top-0 z-50">
       <Container className="py-5 flex items-center justify-between">
         <Logo title="Rohan" subtitle="." />
         <div className="hidden md:inline-flex items-center gap-7 text-sm uppercase tracking-wide font-medium">

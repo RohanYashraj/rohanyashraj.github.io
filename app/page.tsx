@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import HomeDescription from "@/components/HomeDescription";
 import Photo from "@/components/Photo";
 import SocialLinks from "@/components/SocialLinks";
 import Statistics from "@/components/Statistics";
@@ -8,7 +9,7 @@ import { Download } from "lucide-react";
 export default function Home() {
   return (
     <div className="bg-bodyColour text-white/80">
-      <Container className="py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+      <Container className="py-8 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="flex flex-col items-center md:items-start gap-5 md:gap-7 text-center md:text-start">
           <div>
             <h3 className="font-semibold tracking-wider mb-1">
@@ -21,11 +22,11 @@ export default function Home() {
               Rohan Gupta
             </h1>
           </div>
-          <p className="w-auto md:max-w-[500px] text-white/50 font-thin leading-6">
-            I am a Qualified GI Actuary with over 7 years of experience in the
-            areas of pricing, experience studies, rater delivery, R modeling,
-            and predictive analytics.
-          </p>
+          <div className="w-full h-[170px] md:h-[140px] relative">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <HomeDescription />
+            </div>
+          </div>
           <Button className="bg-transparent rounded-full border border-lightSky/50 text-lightSky hover:bg-hoverColor hover:text-black hoverEffect h-11">
             Download CV
             <Download />
