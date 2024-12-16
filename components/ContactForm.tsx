@@ -6,6 +6,8 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import SuccessMsg from "./SuccessMsg";
+import emailjs from "@emailjs/browser";
+import { ToastAction } from "@radix-ui/react-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -39,6 +41,7 @@ const ContactForm = () => {
           description: "Please input your name and email to continue",
           variant: "destructive",
         });
+        setLoading(false);
         return;
       }
       const form = new FormData();
@@ -49,44 +52,40 @@ const ContactForm = () => {
       form.append("Address", formData.Address);
       form.append("Message", formData.Message);
       form.append("DateTime", currentDataTime);
-
-      //   emailjs.sendForm(
-      //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      //     formData,
-      //     {
-      //       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      //     }
-      //   );
-
-      //   emailjs
-      //     .send(
-      //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      //       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      //       formData
-      //     )
-      //     .then(
-      //       (response) => {
-      //         console.log("SUCCESS!", response.status, response.text);
-      //       },
-      //       (error) => {
-      //         console.log("FAILED...", error);
-      //       }
-      //     );
-
-      if (response?.ok) {
-        setSuccess(true);
-        setStatus("Success! Your message has been sent.");
-        setFormData({
-          Name: "",
-          Email: "",
-          Phone: "",
-          Address: "",
-          Message: "",
-        });
-      } else {
-        setStatus("Error! Unable to send your message.");
-      }
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          // "service_dpajk79",
+          // "template_mro3ef3",
+          formData,
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            setSuccess(true);
+            setStatus("Success! Your message has been sent.");
+            setFormData({
+              Name: "",
+              Email: "",
+              Phone: "",
+              Address: "",
+              Message: "",
+            });
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            setStatus("Error! Unable to send your message.");
+            toast({
+              title: "Server Error! Something went wrong.",
+              description: "Email directly to rohanyashraj@gmail.com",
+              // variant: "destructive",
+            });
+          }
+        );
     } catch (error) {
       console.error("Data Submitting Error", error);
       setStatus("Error! Something went wrong.");
@@ -113,7 +112,7 @@ const ContactForm = () => {
                 type="text"
                 id="name"
                 name="Name"
-                required
+                // required
                 placeholder="Your Name"
                 value={formData.Name}
                 onChange={handleChange}
@@ -124,7 +123,7 @@ const ContactForm = () => {
                 type="email"
                 id="email"
                 name="Email"
-                required
+                // required
                 placeholder="Email Address"
                 value={formData.Email}
                 onChange={handleChange}
