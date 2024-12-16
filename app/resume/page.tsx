@@ -38,7 +38,7 @@ const tabContent = {
         company: "Accenture",
         period: "Jul 2023 - Present",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "At Accenture, I lead a team of actuarial professionals and data science experts to transition Excel-based raters into Python-based solutions on the Hyper Exponential cloud platform for the North America region. This initiative aims to streamline pricing processes and enhance efficiency in client deliverables.",
         highlights: ["React", "Python"],
       },
       {
@@ -46,7 +46,7 @@ const tabContent = {
         company: "RSA",
         period: "Dec 2022 - Jul 2023",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "At RSA, I developed and implemented a machine learning model for motor insurance fraud detection, achieving a 20% improvement in the fraud detection success rate. I conducted resource estimation through FTE analysis to recover overlooked benefits and created effective business rules based on SIRA reports, reducing potentially fraudulent applications by 70%.",
         highlights: ["React", "Python"],
       },
       {
@@ -54,7 +54,7 @@ const tabContent = {
         company: "SwissRe",
         period: "Jun 2021 - Dec 2022",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "While at Swiss Re, I supported pricing for over 30 quotes across life, health, and disability products for the South-East Asia market. I conducted experience studies using R, resulting in cost revisions aligned with actual claims experience. Additionally, I developed models for premium trend analysis and data visualization, collaborated with underwriting teams to launch three new critical illness products, and presented findings to clients and senior leadership, including a presentation on decision-tree-based machine learning.",
         highlights: ["React", "Python"],
       },
       {
@@ -62,7 +62,7 @@ const tabContent = {
         company: "Tech Actuarial",
         period: "Jun 2019 - Jun 2021",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "At Tech Actuarial, I worked on diverse projects, including claims analytics for Ayushman Bharat, where I analyzed 200,000 health insurance records, improving claims management efficiency by 20%. I built RShiny dashboards and Python-based tools for tracking claims and detecting fraud. For crop insurance, I developed ARIMA models to project crop yields and dashboards for futures tracking, reducing manual processing time by 70%. I also priced cancer products across 28 states, created valuation models for defined benefit pension schemes, and prepared consulting pitch presentations for various clients.",
         highlights: ["React", "Python"],
       },
       {
@@ -70,7 +70,7 @@ const tabContent = {
         company: "Casualty Actuarial Society",
         period: "Jun 2020 - Aug 2020",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "During my internship with the CAS, I worked on property and casualty pricing, reserving, and predictive modeling projects using Cognalysis Multirate software. I was recognized as a CAS Spotlight Candidate for demonstrating exceptional actuarial skills and contributing valuable insights.",
         highlights: ["React", "Python"],
       },
       {
@@ -78,7 +78,7 @@ const tabContent = {
         company: "Tech Actuarial",
         period: "Jun 2017- Jun 2019",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
+          "As a Research Associate, I focused on fraud detection frameworks for group health insurance schemes, integrating actuarial and data science methodologies to improve fraud detection capabilities",
         highlights: ["React", "Python"],
       },
     ],
