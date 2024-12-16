@@ -17,7 +17,8 @@ const Logo = ({ className, title, subtitle }: Props) => {
             className
           )}
         >
-          {title}{" "}
+          {title}
+          {""}
           <span className="text-lightSky group-hover:text-white hoverEffect">
             {subtitle}
           </span>

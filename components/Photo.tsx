@@ -35,7 +35,7 @@ const Photo = () => {
     }),
   };
   return (
-    <div className="w-full h-full relative flex items-center justify-center">
+    <div className="w-full h-full relative order-1 md:order-2 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -52,7 +52,7 @@ const Photo = () => {
           }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
         >
-          <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[420px] mix-blend-lighten overflow-hidden rounded-full">
+          <div className="w-[250px] h-[250px] md:w-[340px] md:h-[340px] lg:w-[430px] lg:h-[430px] mix-blend-lighten overflow-hidden rounded-full">
             <Image
               src={hero}
               alt="heroImage"
@@ -65,7 +65,7 @@ const Photo = () => {
           </div>
         </motion.div>
         <svg
-          className="w-[300px] lg:w-[506px] h-[300px] lg:h-[506px]"
+          className="w-[300px] md:w-[403px] lg:w-[506px] h-[300px] md:h-[403px] lg:h-[506px]"
           viewBox="0 0 506 506"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

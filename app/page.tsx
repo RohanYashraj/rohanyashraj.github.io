@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-bodyColour text-white/80">
       <Container className="py-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="flex flex-col items-center md:items-start gap-5 md:gap-7 text-center md:text-start">
+        <div className="flex flex-col order-2 md:order-1  items-center md:items-start gap-5 md:gap-7 text-center md:text-start">
           <div>
             <h3 className="font-semibold tracking-wider mb-1">
               Qualified GI Actuary
@@ -27,11 +27,13 @@ export default function Home() {
               <HomeDescription />
             </div>
           </div>
-          <Button className="bg-transparent rounded-full border border-lightSky/50 text-lightSky hover:bg-hoverColor hover:text-black hoverEffect h-11">
-            Download CV
-            <Download />
-          </Button>
-          <SocialLinks />
+          <div className="flex flex-row gap-3">
+            <Button className="bg-transparent rounded-full border border-lightSky/50 text-lightSky hover:bg-hoverColor hover:text-black hoverEffect h-11">
+              Download CV
+              <Download />
+            </Button>
+            <SocialLinks />
+          </div>
           <Statistics />
         </div>
         <Photo />

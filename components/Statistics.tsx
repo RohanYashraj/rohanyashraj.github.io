@@ -8,7 +8,7 @@ const Statistics = () => {
       {statsData?.map((item, index) => (
         <div
           key={index}
-          className="flex flex-1 gap-2 md:gap-4 flex-col md:flex-row items-center justify-center lg:justify-start"
+          className="flex flex-1 gap-4 md:gap-4 flex-col md:flex-row items-center justify-center lg:justify-start"
         >
           <CountUp
             end={item?.num}
