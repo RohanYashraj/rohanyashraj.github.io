@@ -25,7 +25,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { ArrowUpRight, Github, icons } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
