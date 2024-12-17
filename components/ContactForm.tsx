@@ -53,13 +53,13 @@ const ContactForm = () => {
       form.append("DateTime", currentDataTime);
       emailjs
         .send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
           // "service_dpajk79",
           // "template_mro3ef3",
           formData,
           {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
           }
         )
         .then(
