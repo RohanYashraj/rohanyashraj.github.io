@@ -97,36 +97,32 @@ const tabContent = {
     title: "Educational Background",
     items: [
       {
-        degree: "Actuarial Team Lead",
-        institution: "Accenture",
-        period: "Jul 2023 - Present",
+        degree: "Qualified GI Actuary (FIA)",
+        institution: "Institute and Faculty of Actuaries (IFoA)",
+        period: "Dec 2024",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+          "Wrote my first actuarial exam on Sep 2017 and qualified as a GI actuary on Dec 2024",
+        achivements: ["Actuary", "Predictive Modeling"],
       },
       {
-        degree: "Actuarial Consultant",
-        institution: "RSA",
-        period: "Dec 2022 - Jul 2023",
+        degree: "Doctor of Philosophy (PhD)",
+        institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
+        period: "Jun 2019 - Nov 2021",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+          "Wrote a thesis on the area of Fraud detection in the field of health and motor insurance claims using data-driven fraud detection models",
+        achivements: [
+          "Fraud Detection",
+          "Conference Presentations",
+          "Journal Articles",
+          "Data Science",
+        ],
       },
       {
-        degree: "Actuarial Analyst",
-        institution: "SwissRe",
-        period: "Jun 2021 - Dec 2022",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
-      },
-      {
-        degree: "Actuarial Consultant",
-        institution: "Tech Actuarial",
-        period: "Jun 2019 - Jun 2021",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+        degree: "MSc (Mathematics) specialization in Actuarial Science",
+        institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
+        period: "Jun 2017 - Apr 2019",
+        description: "Pursued actuarial science along with mathematics masters",
+        achivements: ["Actuarial Science", "Mathematics"],
       },
     ],
   },
@@ -134,29 +130,21 @@ const tabContent = {
     title: "Technical Skills",
     categories: [
       {
-        name: "Actuarial Team Lead",
+        name: "Actuarial Data Science Professional",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
-      },
-      {
-        name: "Actuarial Team Lead",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
-      },
-      {
-        name: "Actuarial Team Lead",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
+          "My expertise in actuarial data science is demonstrated by my 8 international journal papers and 1 book chapter, as well as my presentations at top actuarial data science conferences such as Insurance Data Science, CAS Spring Meeting, and ASTIN Actuarial Colloquia. My passion for predictive modeling, data interpretation, and visualization has also led me to develop over five web apps/dashboards for dynamic reporting and visualizations. ",
+        skills: [
+          "Qualified GI Actuary",
+          "Predictive Modelling",
+          "Data Science",
+        ],
       },
     ],
   },
   about: {
     title: "About Me",
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum quia eligendi iusto beatae corrupti quisquam quos sed dolorem minima, ipsam culpa veniam eos voluptatem?",
-    interests: ["coding", "listing to music"],
+    bio: "I am always seeking new challenges and opportunities to grow in my field and am excited to see where my skills and passion takes me.",
+    interests: ["Programming", "Listining to music"],
     languages: ["English", "Hindi"],
   },
 };
