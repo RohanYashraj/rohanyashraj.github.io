@@ -24,6 +24,7 @@
     "lucide-react": "^0.468.0",
     "motion": "^11.14.4",
     "next": "15.1.0",
+    "posthog-js": "^1.202.2",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",

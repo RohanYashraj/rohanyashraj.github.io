@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
+import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
   title: "Dr. Rohan Gupta, FIA",
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${raleway.variable} antialiased text-white/80`}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
-        <Toaster />
+        <PostHogProvider>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+          <Toaster />
+        </PostHogProvider>
       </body>
     </html>
   );
