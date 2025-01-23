@@ -144,7 +144,7 @@ const tabContent = {
   about: {
     title: "About Me",
     bio: "I am always seeking new challenges and opportunities to grow in my field and am excited to see where my skills and passion takes me.",
-    interests: ["Programming", "Listining to music"],
+    interests: ["Programming", "Listening to music"],
     languages: ["English", "Hindi"],
   },
 };
