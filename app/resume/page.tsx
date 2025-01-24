@@ -130,22 +130,46 @@ const tabContent = {
     title: "Technical Skills",
     categories: [
       {
-        name: "Actuarial Data Science Professional",
+        name: "Data Scientist - Actuary",
         description:
-          "My expertise in actuarial data science is demonstrated by my 8 international journal papers and 1 book chapter, as well as my presentations at top actuarial data science conferences such as Insurance Data Science, CAS Spring Meeting, and ASTIN Actuarial Colloquia. My passion for predictive modeling, data interpretation, and visualization has also led me to develop over five web apps/dashboards for dynamic reporting and visualizations. ",
+          "I combine actuarial expertise with data science to analyze complex datasets, build predictive models, and develop innovative pricing strategies. My focus includes helping organizations transition from legacy Excel-based systems to modern platforms like Hyperexponential, enhancing efficiency and scalability.",
         skills: [
           "Qualified GI Actuary",
           "Predictive Modelling",
-          "Data Science",
+          "Technology transformation",
+          "Hyper Exponential",
         ],
+      },
+      {
+        name: "Technical Skills",
+        description:
+          "Proficient in Python, R, SQL, and advanced Excel for data analysis, predictive modeling, and workflow automation. I efficiently manage code and collaborate on projects using Git, GitHub, and GitLab. Skilled in creating professional dashboards, reports, and presentations with Office tools and Google Workspace.",
+        skills: ["Python", "R", "VBA", "Git", "SQL"],
+      },
+      {
+        name: "Public Speaking & Team Collaboration",
+        description:
+          "I have delivered presentation on multiple international conferences simplifying complex topics, and facilitating discussions with diverse audiences. I thrive in cross-functional team collaboration, effectively managing stakeholders, driving consensus, and fostering a supportive and productive environment.",
+        skills: ["Public Speaker", "Conferences", "Team Work"],
+      },
+      {
+        name: "Building Web Apps",
+        description:
+          "I enjoy building web applications that make complex processes more accessible and user-friendly. With a good foundation in full-stack development.",
+        skills: ["RShiny", "Next.js", "Flask", "PowerBI"],
       },
     ],
   },
   about: {
     title: "About Me",
     bio: "I am always seeking new challenges and opportunities to grow in my field and am excited to see where my skills and passion takes me.",
-    interests: ["Programming", "Listening to music"],
-    languages: ["English", "Hindi"],
+    interests: [
+      "Programming",
+      "Staying upto date with latest technologies",
+      "Listening to music",
+      "Chilling with friends",
+    ],
+    languages: ["English", "Hindi", "Nepali"],
   },
 };
 
