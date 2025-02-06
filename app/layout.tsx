@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     canonical: "https://rohanyashraj.github.io",
   },
   other: {
-    "og:image": "https://rohanyashraj.github.io/profilepic.jpg", // Relative path for LinkedIn and other OG tags
+    "og:image": "https://rohanyashraj.github.io/profile.jpg", // Relative path for LinkedIn and other OG tags
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:type": "image/jpeg",
