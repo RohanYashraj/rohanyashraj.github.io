@@ -42,10 +42,10 @@ export const metadata: Metadata = {
       "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
     url: "https://rohanyashraj.github.io",
     type: "website",
-    siteName: "Dr. Rohan Gupta, FIA",
+    siteName: "Dr. Rohan Gupta, FIA | Actuary - Data Scientist",
     images: [
       {
-        url: "/profilepic.jpg", // Replace with actual image URL
+        url: "https://rohanyashraj.github.io/profilepic.jpg", // Replace with actual image URL
         width: 1200,
         height: 630,
         alt: "Portfolio Image",
