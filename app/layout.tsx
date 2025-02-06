@@ -8,8 +8,65 @@ import { Toaster } from "@/components/ui/toaster";
 import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Dr. Rohan Gupta, FIA",
-  description: "Rohan Yashraj Gupta - Portfolio website",
+  title: "Dr. Rohan Gupta, FIA | Actuary & Data Scientist",
+  description:
+    "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+  keywords: [
+    "Actuary",
+    "GI",
+    "Insurance",
+    "Machine Learning",
+    "Fraud Detection",
+    "Projects",
+    "Blog",
+    "Rohan Gupta",
+    "FIA",
+    "Data Scientist",
+    "Actuarial Science",
+    "Data Analysis",
+    "Data Visualization",
+    "Python",
+    "R",
+    "SQL",
+    "Power BI",
+    "GitHub",
+    "Actuarial Insights",
+    "Actuarial Projects",
+    "Actuarial Portfolio",
+  ],
+  authors: [{ name: "Dr. Rohan Gupta", url: "https://rohanyashraj.github.io" }],
+  creator: "Dr. Rohan Gupta",
+  openGraph: {
+    title: "Dr. Rohan Gupta, FIA | Actuary - Data Scientist",
+    description:
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+    url: "https://rohanyashraj.github.io",
+    type: "website",
+    siteName: "Dr. Rohan Gupta, FIA",
+    images: [
+      {
+        url: "/profilepic.jpg", // Replace with actual image URL
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Image",
+      },
+    ],
+    locale: "en_US",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://rohanyashraj.github.io",
+  },
+  other: {
+    "og:image": "/profilepic.jpg", // Relative path for LinkedIn and other OG tags
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/jpeg",
+    "og:updated_time": "2025-02-06T12:00:00Z", // Update dynamically
+  },
 };
 
 const raleway = localFont({
