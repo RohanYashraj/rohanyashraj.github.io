@@ -30,8 +30,8 @@ export default function Home() {
           </div>
           <div className="flex flex-row gap-3">
             <Link
-              href={"/resume.pdf"}
-              target="_blank"
+              href={"/resume/view"}
+              // target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="bg-transparent rounded-full border border-lightSky/50 text-lightSky hover:bg-hoverColor hover:text-black hoverEffect h-11">
