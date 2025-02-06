@@ -36,6 +36,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dr. Rohan Gupta", url: "https://rohanyashraj.github.io" }],
   creator: "Dr. Rohan Gupta",
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Rohan Gupta, FIA | Actuary & Data Scientist",
+    description:
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA.",
+    creator: "@Rohan_Yashraj", // Replace with your actual Twitter handle
+    images: ["https://rohanyashraj.github.io/profile.jpg"], // Relative path for Twitter
+  },
   openGraph: {
     title: "Dr. Rohan Gupta, FIA | Actuary - Data Scientist",
     description:
@@ -61,7 +69,7 @@ export const metadata: Metadata = {
     canonical: "https://rohanyashraj.github.io",
   },
   other: {
-    "og:image": "/profilepic.jpg", // Relative path for LinkedIn and other OG tags
+    "og:image": "https://rohanyashraj.github.io/profilepic.jpg", // Relative path for LinkedIn and other OG tags
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:type": "image/jpeg",
