@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profilepic.jpg", // Replace with actual image URL
+        url: "https://rohanyashraj.github.io/profile.jpg", // Replace with actual image URL
         width: 1200,
         height: 630,
         alt: "Portfolio Image",
