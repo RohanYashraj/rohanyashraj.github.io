@@ -19,7 +19,7 @@ export const experienceData: ExperienceItem[] = [
       {
         title: "Rater Delivery & Transition",
         points: [
-          "Spearheaded the transition of Excel-based raters to Python solutions on the Hyper Exponential cloud platform for North America, leading a team of actuarial and data science professionals.",
+          "Work closely with the team to transition Excel-based raters to Python solutions on the Hyper Exponential cloud platform for North America.",
           "Implemented Agile methodologies to optimize project management and team workflow.",
         ],
       },

@@ -1,5 +1,5 @@
 "use client";
-import hero from "@/images/hero.png";
+import hero from "@/images/hero.webp";
 import Image from "next/image";
 import { motion } from "motion/react";
 

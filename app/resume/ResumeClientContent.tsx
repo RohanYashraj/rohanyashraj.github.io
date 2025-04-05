@@ -234,11 +234,6 @@ const ResumePage = () => {
 
   const totalExperience = calculateExperience();
 
-  // Toggle function for expanding/collapsing items
-  const handleToggle = (index: number) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
   const experienceItems = tabContent.experience.items as ExperienceItem[];
 
   // Animation variants for expansion
@@ -303,84 +298,92 @@ const ResumePage = () => {
                 </motion.span>
               </div>
               <div className="relative pl-6 border-l-2 border-lightSky/30">
-                {experienceItems.map((item, index) => (
-                  <div key={index} className="mb-8 last:mb-0">
-                    <div
-                      className={`absolute w-4 h-4 rounded-full mt-1 -left-[9px] border-2 ${
-                        expandedIndex === index
-                          ? "bg-hoverColor border-hoverColor"
-                          : "bg-bodyColour border-lightSky/50"
-                      }`}
-                    ></div>
-                    <motion.div
-                      initial={false}
-                      onClick={() => handleToggle(index)}
-                      className="cursor-pointer hover:bg-lightSky/5 p-3 rounded-md transition-colors duration-200"
+                {/* Experience Items List */}
+                <ul className="grid grid-cols-1 gap-y-8">
+                  {experienceItems.map((item, index) => (
+                    <li
+                      key={index}
+                      className="relative group bg-primary/5 dark:bg-primary/10 p-4 rounded-lg shadow-sm cursor-pointer transition-all duration-300 hover:shadow-md"
+                      onMouseEnter={() => setExpandedIndex(index)} // Expand on hover enter
+                      onMouseLeave={() => setExpandedIndex(null)} // Collapse on hover leave
                     >
-                      <div className="flex flex-col md:flex-row items-start justify-between mb-1">
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">
-                            {item?.role}
-                          </h3>
-                          <p className="text-muted-foreground text-sm">
-                            {item?.company}
-                          </p>
+                      {/* Timestamp Dot */}
+                      <div
+                        className={`absolute w-4 h-4 rounded-full border-2 ${
+                          expandedIndex === index
+                            ? "bg-hoverColor border-hoverColor"
+                            : "bg-bodyColour border-lightSky/50"
+                        } left-[-31px] top-5`}
+                      ></div>
+
+                      {/* Main Item Content (adjusted layout) */}
+                      <div>
+                        {/* Row for Role and Period */}
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-1">
+                          <h3 className="text-xl font-semibold">{item.role}</h3>
+                          <div className="flex items-center gap-x-2 text-sm text-muted-foreground mt-1 sm:mt-0 whitespace-nowrap">
+                            <Calendar className="w-4 h-4" />
+                            <span>{item.period}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center text-muted-foreground text-sm mt-1 md:mt-0 whitespace-nowrap">
-                          <Calendar className="h-4 w-4 mr-1.5" />
-                          {item?.period}
+                        {/* Company below */}
+                        <div className="flex items-center gap-x-2 text-sm mb-2">
+                          <Briefcase className="w-4 h-4 text-muted-foreground" />
+                          <span>{item.company}</span>
                         </div>
                       </div>
-                    </motion.div>
-                    <AnimatePresence initial={false}>
-                      {expandedIndex === index && (
-                        <motion.div
-                          key="content"
-                          initial="collapsed"
-                          animate="open"
-                          exit="collapsed"
-                          variants={detailsVariants}
-                          className="overflow-hidden pl-3 md:pl-5"
-                        >
-                          <div className="space-y-4 mb-4">
-                            {item.sections.map((section, sectionIndex) => (
-                              <div key={sectionIndex}>
-                                <div className="flex items-start mb-2">
-                                  <span className="text-lg font-bold mr-2 mt-1 text-lightSky/80">
-                                    •
-                                  </span>
-                                  <h4 className="font-semibold text-lightSky/90">
-                                    {section.title}
-                                  </h4>
+
+                      {/* Animated Details Section */}
+                      <AnimatePresence>
+                        {expandedIndex === index && (
+                          <motion.div
+                            key="content"
+                            initial="collapsed"
+                            animate="open"
+                            exit="collapsed"
+                            variants={detailsVariants}
+                            className="overflow-hidden pl-3 md:pl-5"
+                          >
+                            <div className="space-y-4 mb-4">
+                              {item.sections.map((section, sectionIndex) => (
+                                <div key={sectionIndex}>
+                                  <div className="flex items-start mb-2">
+                                    <span className="text-lg font-bold mr-2 mt-1 text-lightSky/80">
+                                      •
+                                    </span>
+                                    <h4 className="font-semibold text-lightSky/90">
+                                      {section.title}
+                                    </h4>
+                                  </div>
+                                  <ul className="list-none pl-8 space-y-1">
+                                    {section.points.map((point, pointIndex) => (
+                                      <li
+                                        key={pointIndex}
+                                        className="flex items-start text-white/80 text-sm"
+                                      >
+                                        <span className="text-xs mr-2 mt-[5px] text-lightSky/60">
+                                          ◦
+                                        </span>
+                                        {point}
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </div>
-                                <ul className="list-none pl-8 space-y-1">
-                                  {section.points.map((point, pointIndex) => (
-                                    <li
-                                      key={pointIndex}
-                                      className="flex items-start text-white/80 text-sm"
-                                    >
-                                      <span className="text-xs mr-2 mt-[5px] text-lightSky/60">
-                                        ◦
-                                      </span>
-                                      {point}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {item.highlights.map((highlight, i) => (
-                              <Badge key={i} variant="secondary">
-                                {highlight}
-                              </Badge>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
+                              ))}
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {item.highlights.map((highlight, i) => (
+                                <Badge key={i} variant="secondary">
+                                  {highlight}
+                                </Badge>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </TabsContent>
             <TabsContent value="education">
