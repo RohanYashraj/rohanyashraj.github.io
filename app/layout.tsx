@@ -13,26 +13,13 @@ export const metadata: Metadata = {
     "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
   keywords: [
     "Actuary",
-    "GI",
-    "Insurance",
-    "Machine Learning",
-    "Fraud Detection",
-    "Projects",
-    "Blog",
-    "Rohan Gupta",
-    "FIA",
     "Data Scientist",
+    "General Insurance",
+    "Machine Learning",
+    "FIA",
+    "Rohan Gupta",
     "Actuarial Science",
-    "Data Analysis",
-    "Data Visualization",
-    "Python",
-    "R",
-    "SQL",
-    "Power BI",
-    "GitHub",
-    "Actuarial Insights",
-    "Actuarial Projects",
-    "Actuarial Portfolio",
+    "Portfolio",
   ],
   authors: [
     { name: "Dr. Rohan Yashraj Gupta", url: "https://rohanyashraj.github.io" },
@@ -69,13 +56,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://rohanyashraj.github.io",
-  },
-  other: {
-    "og:image": "https://rohanyashraj.github.io/profile.jpg", // Relative path for LinkedIn and other OG tags
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    "og:image:type": "image/jpeg",
-    "og:updated_time": "2025-02-06T12:00:00Z", // Update dynamically
   },
 };
 

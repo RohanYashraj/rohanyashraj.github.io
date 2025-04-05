@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   keywords: [
     "Actuarial Projects",
     "Data Science Projects",
-    "Machine Learning Projects",
-    "Insurance Projects",
+    "Machine Learning",
+    "Insurance",
     "Conference Presentations",
     "Research Publications",
     "Rohan Gupta Work",
