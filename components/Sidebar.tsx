@@ -1,5 +1,5 @@
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import { X } from "lucide-react";
+import { X, Download } from "lucide-react";
 import React from "react";
 import Logo from "./Logo";
 import { navbarData } from "@/constants";
@@ -45,12 +45,12 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose, pathname }) => {
           </Link>
         ))}
         <Link
-          href={"/resume.pdf"}
-          target="_blank"
+          href={"/resume/view"}
           rel="noopener noreferrer"
-          className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect"
+          className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect inline-flex items-center gap-2"
         >
-          Hire Me
+          Download Resume
+          <Download className="w-4 h-4" />
         </Link>
         <SocialLinks />
       </nav>

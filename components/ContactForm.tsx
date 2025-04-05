@@ -51,43 +51,56 @@ const ContactForm = () => {
       form.append("Address", formData.Address);
       form.append("Message", formData.Message);
       form.append("DateTime", currentDataTime);
-      emailjs
-        .send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-          // "service_dpajk79",
-          // "template_mro3ef3",
-          formData,
-          {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
-          }
-        )
-        .then(
-          (response) => {
-            console.log("SUCCESS!", response.status, response.text);
-            setSuccess(true);
-            setStatus("Success! Your message has been sent.");
-            setFormData({
-              Name: "",
-              Email: "",
-              Phone: "",
-              Address: "",
-              Message: "",
-            });
-          },
-          (error) => {
-            console.log("FAILED...", error);
-            setStatus("Error! Unable to send your message.");
-            toast({
-              title: "Server Error! Something went wrong.",
-              description: "Email directly to rohanyashraj@gmail.com",
-              // variant: "destructive",
-            });
-          }
-        );
+
+      // Introduce a minimum delay
+      const minDelay = new Promise((resolve) => setTimeout(resolve, 500));
+
+      // Wrap emailjs.send in a promise to handle its result
+      const sendEmailPromise = new Promise((resolve, reject) => {
+        emailjs
+          .send(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+            formData,
+            {
+              publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
+            }
+          )
+          .then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              setSuccess(true);
+              setStatus("Success! Your message has been sent.");
+              setFormData({
+                Name: "",
+                Email: "",
+                Phone: "",
+                Address: "",
+                Message: "",
+              });
+              resolve(response); // Resolve the outer promise on success
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              setStatus("Error! Unable to send your message.");
+              toast({
+                title: "Server Error! Something went wrong.",
+                description: "Email directly to rohanyashraj@gmail.com",
+              });
+              reject(error); // Reject the outer promise on failure
+            }
+          );
+      });
+
+      // Wait for both the email sending and the minimum delay
+      await Promise.all([sendEmailPromise, minDelay]);
     } catch (error) {
-      console.error("Data Submitting Error", error);
-      setStatus("Error! Something went wrong.");
+      // Error handling remains largely the same, but catch block might catch errors from sendEmailPromise rejection
+      console.error("Data Submitting Error or EmailJS Failure", error);
+      // Avoid setting status if emailjs already set an error status
+      if (!status.startsWith("Error!")) {
+        setStatus("Error! Something went wrong.");
+      }
     } finally {
       setLoading(false);
     }
