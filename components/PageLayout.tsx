@@ -11,15 +11,16 @@ interface Props {
 const PageLayout = ({ children, className }: Props) => {
   return (
     <Container className={cn("w-full", className)}>
-      <motion.div
+      <motion.main
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
         }}
+        role="main"
       >
         {children}
-      </motion.div>
+      </motion.main>
     </Container>
   );
 };
