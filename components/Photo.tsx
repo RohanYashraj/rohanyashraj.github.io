@@ -55,10 +55,9 @@ const Photo = () => {
           <div className="w-[250px] h-[250px] md:w-[340px] md:h-[340px] lg:w-[430px] lg:h-[430px] mix-blend-lighten overflow-hidden rounded-full">
             <Image
               src={hero}
-              alt="heroImage"
+              alt="Profile picture of Dr. Rohan Gupta"
               width={400}
               height={400}
-              quality={100}
               className="object-contain w-full h-full"
               priority
             />

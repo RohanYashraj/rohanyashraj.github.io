@@ -1,7 +1,47 @@
+import { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/Container";
 import PageLayout from "@/components/PageLayout";
 import { Mail, MapPinCheck, Phone } from "lucide-react";
+
+// Define page-specific metadata for Contact
+export const metadata: Metadata = {
+  title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+  description:
+    "Get in touch with Dr. Rohan Gupta, FIA. Contact information and form for inquiries, collaborations, or general questions.",
+  keywords: [
+    "Contact Rohan Gupta",
+    "Actuary Contact",
+    "Data Scientist Contact",
+    "Rohan Gupta Email",
+    "Rohan Gupta Phone",
+    "Actuarial Inquiry",
+    "Data Science Collaboration",
+  ],
+  alternates: {
+    canonical: "https://rohanyashraj.github.io/contact",
+  },
+  openGraph: {
+    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+    description:
+      "Contact Dr. Rohan Gupta, FIA for professional inquiries or collaborations.",
+    url: "https://rohanyashraj.github.io/contact",
+    images: [
+      {
+        url: "https://rohanyashraj.github.io/profile.jpg", // Consistent profile image
+        width: 1200,
+        height: 1200,
+        alt: "Contact - Dr. Rohan Gupta",
+      },
+    ],
+  },
+  twitter: {
+    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+    description:
+      "Contact Dr. Rohan Gupta, FIA for professional inquiries or collaborations.",
+    images: ["https://rohanyashraj.github.io/profile.jpg"],
+  },
+};
 
 const infoData = [
   {

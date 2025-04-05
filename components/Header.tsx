@@ -1,6 +1,6 @@
 "use client";
 
-import { navbarData } from "@/constants";
+import { navbarData } from "@/data/navbarData";
 import Container from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
@@ -24,7 +24,10 @@ const Header = () => {
         >
           <Logo title="Rohan" subtitle="." />
         </motion.div>
-        <div className="hidden md:inline-flex items-center gap-7 text-sm uppercase tracking-wide font-medium">
+        <nav
+          className="hidden md:inline-flex items-center gap-7 text-sm uppercase tracking-wide font-medium"
+          aria-label="Main navigation"
+        >
           {navbarData?.map((item) => (
             <Link
               key={item?.title}
@@ -58,7 +61,7 @@ const Header = () => {
               <Download className="w-4 h-4" />
             </Link>
           </motion.div>
-        </div>
+        </nav>
         <button
           aria-label="Toggle Menu"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}

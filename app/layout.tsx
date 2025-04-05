@@ -13,26 +13,13 @@ export const metadata: Metadata = {
     "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
   keywords: [
     "Actuary",
-    "GI",
-    "Insurance",
-    "Machine Learning",
-    "Fraud Detection",
-    "Projects",
-    "Blog",
-    "Rohan Gupta",
-    "FIA",
     "Data Scientist",
+    "General Insurance",
+    "Machine Learning",
+    "FIA",
+    "Rohan Gupta",
     "Actuarial Science",
-    "Data Analysis",
-    "Data Visualization",
-    "Python",
-    "R",
-    "SQL",
-    "Power BI",
-    "GitHub",
-    "Actuarial Insights",
-    "Actuarial Projects",
-    "Actuarial Portfolio",
+    "Portfolio",
   ],
   authors: [
     { name: "Dr. Rohan Yashraj Gupta", url: "https://rohanyashraj.github.io" },
@@ -70,13 +57,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://rohanyashraj.github.io",
   },
-  other: {
-    "og:image": "https://rohanyashraj.github.io/profile.jpg", // Relative path for LinkedIn and other OG tags
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    "og:image:type": "image/jpeg",
-    "og:updated_time": "2025-02-06T12:00:00Z", // Update dynamically
-  },
 };
 
 const raleway = localFont({
@@ -90,9 +70,57 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+    url: "https://rohanyashraj.github.io",
+    description:
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Dr. Rohan Yashraj Gupta",
+    alternateName: "Rohan Gupta",
+    url: "https://rohanyashraj.github.io",
+    jobTitle: "Actuary & Data Scientist", // You might want to make this more specific or add multiple
+    worksFor: {
+      "@type": "Organization",
+      name: "Bajaj Allianz General Insurance", // Replace with actual if applicable, or remove if self-employed/independent
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Sri Sathya Sai Institute of Higher Learning",
+    },
+    sameAs: [
+      // Add links to your professional profiles
+      "https://www.linkedin.com/in/dr-rohan-yashraj-gupta/", // Example
+      "https://github.com/RohanYashraj", // Example
+      "https://twitter.com/Rohan_Yashraj", // Example
+      // Add other relevant profiles (e.g., ResearchGate, Google Scholar)
+    ],
+    image: "https://rohanyashraj.github.io/profile.jpg", // Ensure this image is optimized!
+    description:
+      "Qualified General Insurance Actuary (FIA, FIAI) and Data Scientist with a PhD, specializing in fraud detection, predictive modeling, and technology transformation in the insurance sector.",
+  };
+
   return (
     <html lang="en">
-      <body className={`${raleway.variable} antialiased text-white/80`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+      </head>
+      <body
+        className={`${raleway.variable} antialiased bg-bodyColour text-white/80`}
+      >
         <PostHogProvider>
           <Header />
           <StairTransition />
