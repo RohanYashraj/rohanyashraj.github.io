@@ -3,8 +3,33 @@
 import PageLayout from "@/components/PageLayout";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Briefcase, Calendar, Code2, GraduationCap, User } from "lucide-react";
-import { motion } from "motion/react";
+import {
+  Briefcase,
+  Calendar,
+  Code2,
+  GraduationCap,
+  User,
+  Clock,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+// Define interface for Experience items with sections AND highlights
+interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  sections: { title: string; points: string[] }[];
+  highlights: string[];
+}
+
+// Define interface for Education items with sections
+interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  sections?: { title: string; points: string[] }[];
+}
 
 const tabMenu = [
   {
@@ -34,62 +59,186 @@ const tabContent = {
     title: "Professional Experience",
     items: [
       {
-        role: "Actuarial Team Lead",
-        company: "Accenture",
+        role: "Actuarial Data Scientist",
+        company: "Accenture Solutions Pvt. Ltd., India",
         period: "Jul 2023 - Present",
-        description:
-          "At Accenture, I lead a team of actuarial professionals and data science experts to transition Excel-based raters into Python-based solutions on the Hyper Exponential cloud platform for the North America region. This initiative aims to streamline pricing processes and enhance efficiency in client deliverables.",
+        sections: [
+          {
+            title: "Rater Delivery & Transition",
+            points: [
+              "Spearheaded the transition of Excel-based raters to Python solutions on the Hyper Exponential cloud platform for North America, leading a team of actuarial and data science professionals.",
+              "Implemented Agile methodologies to optimize project management and team workflow.",
+            ],
+          },
+        ],
         highlights: [
           "Team Lead",
-          "Data Science",
-          "Agile Methodologies",
-          "Project Management",
+          "Python Rater Transition",
+          "Hyper Exponential",
+          "Agile",
         ],
       },
       {
-        role: "Actuarial Consultant",
-        company: "RSA",
-        period: "Dec 2022 - Jul 2023",
-        description:
-          "At RSA, I developed and implemented a machine learning model for motor insurance fraud detection, achieving a 20% improvement in the fraud detection success rate. I conducted resource estimation through FTE analysis to recover overlooked benefits and created effective business rules based on SIRA reports, reducing potentially fraudulent applications by 70%.",
+        role: "Actuarial Data Science Consultant",
+        company: "RSA Actuarial Services, India",
+        period: "Dec 2022 - June 2023",
+        sections: [
+          {
+            title: "Motor Insurance Fraud Detection",
+            points: [
+              "Developed and implemented a Machine Learning model to prioritize fraudulent cases, boosting the fraud application success rate by 20%.",
+              "Executed a comprehensive Full-Time Equivalent (FTE) analysis to identify and recover previously neglected resource benefits.",
+              "Authored effective SIRA-based business rules, slashing potentially fraudulent applications by 70%.",
+            ],
+          },
+        ],
         highlights: [
-          "Fraud Analysis",
+          "Machine Learning",
+          "Fraud Detection",
+          "FTE Analysis",
           "Data Analytics",
-          "Predictive Modeling",
-          "Risk Assessment",
         ],
       },
       {
         role: "Actuarial Analyst",
         company: "SwissRe",
         period: "Jun 2021 - Dec 2022",
-        description:
-          "While at Swiss Re, I supported pricing for over 30 quotes across life, health, and disability products for the South-East Asia market. I conducted experience studies using R, resulting in cost revisions aligned with actual claims experience. Additionally, I developed models for premium trend analysis and data visualization, collaborated with underwriting teams to launch three new critical illness products, and presented findings to clients and senior leadership, including a presentation on decision-tree-based machine learning.",
-        highlights: ["Reinsurance Pricing", "Communication", "Documentation"],
+        sections: [
+          {
+            title: "Pricing & Quoting (South-East Asia)",
+            points: [
+              "Supported pricing and experience studies for 30+ quotes across diverse L&H products (Life, CI, Disability, Hospitalization).",
+              "Performed impact testing on terms of trade assumptions for whole/life assurance products.",
+              "Monitored critical illness capacity for over 70+ quotes.",
+            ],
+          },
+          {
+            title: "Experience Studies",
+            points: [
+              "Executed experience studies using R to derive A/E ratios, enabling cost revisions aligned with actual claims data.",
+            ],
+          },
+          {
+            title: "R Modeling & Dashboarding",
+            points: [
+              "Developed R and Excel models for experience studies, premium trend analysis, and L&H data visualization.",
+              "Leveraged R models to generate profit commission insights across various quotes.",
+            ],
+          },
+          {
+            title: "Product Design & Launch",
+            points: [
+              "Collaborated with claims and underwriting teams on product design, contributing to the successful launch of three new specialized critical illness products.",
+            ],
+          },
+          {
+            title: "Communication & Presentation",
+            points: [
+              "Presented pricing strategies and results to team leads and clients via executive summaries.",
+              "Delivered a technical presentation on 'Intro to Machine Learning using Decision Tree'.",
+            ],
+          },
+        ],
+        highlights: [
+          "L&H Pricing",
+          "R Modeling",
+          "Experience Studies",
+          "Product Launch",
+        ],
       },
       {
         role: "Actuarial Consultant",
         company: "Tech Actuarial",
         period: "Jun 2019 - Jun 2021",
-        description:
-          "At Tech Actuarial, I worked on diverse projects, including claims analytics for Ayushman Bharat, where I analyzed 200,000 health insurance records, improving claims management efficiency by 20%. I built RShiny dashboards and Python-based tools for tracking claims and detecting fraud. For crop insurance, I developed ARIMA models to project crop yields and dashboards for futures tracking, reducing manual processing time by 70%. I also priced cancer products across 28 states, created valuation models for defined benefit pension schemes, and prepared consulting pitch presentations for various clients.",
-        highlights: ["Python", "R", "Excel Tools", "Business Analytics"],
+        sections: [
+          {
+            title: "Ayushman Bharat Claims Analytics",
+            points: [
+              "Performed claims analytics using Python & R for India's largest group health scheme (Ayushman Bharat), analyzing 200,000+ records for broker/insurer insights.",
+              "Engineered an RShiny dashboard for monthly claims tracking, improving claims management efficiency by 20%.",
+              "Analyzed claim patterns and fraud indicators in 200,000+ records during COVID-19, achieving a 5% reduction in fraudulent claims.",
+            ],
+          },
+          {
+            title: "Crop Insurance Pricing & Forecasting",
+            points: [
+              "Automated daily yield data collection via Python web scraping (3M+ data points), reducing processing time by nearly 90%.",
+              "Constructed ARIMA models to project crop yields, enhancing forecast accuracy for the subsequent three months.",
+              "Built a futures tracking dashboard covering 12 scenarios/six crops, decreasing manual tracking time by 70%.",
+            ],
+          },
+          {
+            title: "Cancer Product Pricing & Analysis",
+            points: [
+              "Priced four distinct cancer product packages across 28 Indian states.",
+              "Developed a dashboard for dynamic comparison and visualization of L&H risk metrics across 100+ scenarios, improving pricing analysis.",
+            ],
+          },
+          {
+            title: "Defined Benefit Pension Scheme Valuation",
+            points: [
+              "Streamlined Defined Benefit pension scheme valuations using Excel, achieving a 10x reduction in runtime and boosting process efficiency.",
+            ],
+          },
+          {
+            title: "Consulting Presentations",
+            points: [
+              "Authored over 30 consulting pitch presentations for diverse clientele over a two-year period.",
+            ],
+          },
+        ],
+        highlights: [
+          "Python/R",
+          "Claims Analytics",
+          "Predictive Modeling",
+          "Dashboarding",
+        ],
       },
       {
-        role: "CAS Summer Internship Program",
-        company: "Casualty Actuarial Society",
+        role: "Student Central Summer Internship Program",
+        company: "Casualty Actuarial Society, USA",
         period: "Jun 2020 - Aug 2020",
-        description:
-          "During my internship with the CAS, I worked on property and casualty pricing, reserving, and predictive modeling projects using Cognalysis Multirate software. I was recognized as a CAS Spotlight Candidate for demonstrating exceptional actuarial skills and contributing valuable insights.",
-        highlights: ["Pricing", "Reserving", "Soft Skills", "Case Study"],
+        sections: [
+          {
+            title: "P&C Program Focus & Projects",
+            points: [
+              "Completed an intensive six-week P&C program focused on data visualization, pricing, reserving, and predictive modeling.",
+              "Executed four projects using Cognalysis Multirate software, enhancing pricing and reserving strategies.",
+            ],
+          },
+          {
+            title: "Recognition",
+            points: [
+              "Recognized as a 'CAS Spotlight Candidate' for active participation and exceptional actuarial knowledge.",
+            ],
+          },
+        ],
+        highlights: [
+          "P&C Pricing",
+          "Reserving",
+          "Predictive Modeling",
+          "CAS Spotlight",
+        ],
       },
       {
         role: "Research Associate",
         company: "Tech Actuarial",
-        period: "Jun 2017- Jun 2019",
-        description:
-          "As a Research Associate, I focused on fraud detection frameworks for group health insurance schemes, integrating actuarial and data science methodologies to improve fraud detection capabilities",
-        highlights: ["Insurance Fraud Precention", "Data Science"],
+        period: "Jun 2017 - May 2019",
+        sections: [
+          {
+            title: "Group Health Insurance Fraud Research",
+            points: [
+              "Researched and developed fraud detection frameworks for Group Health Insurance schemes.",
+              "Integrated actuarial and data science methodologies to enhance detection capabilities.",
+            ],
+          },
+        ],
+        highlights: [
+          "Fraud Detection",
+          "Research",
+          "Data Science",
+          "Health Insurance",
+        ],
       },
     ],
   },
@@ -100,29 +249,51 @@ const tabContent = {
         degree: "Qualified GI Actuary (FIA)",
         institution: "Institute and Faculty of Actuaries (IFoA)",
         period: "Dec 2024",
-        description:
-          "Wrote my first actuarial exam on Sep 2017 and qualified as a GI actuary on Dec 2024",
-        achivements: ["Actuary", "Predictive Modeling"],
+        sections: [
+          {
+            title: "Qualification Journey",
+            points: [
+              "Wrote my first actuarial exam on Sep 2017 and qualified as a GI actuary on Dec 2024",
+              "Achieved Fellowship designation (FIA).",
+            ],
+          },
+        ],
       },
       {
         degree: "Doctor of Philosophy (PhD)",
         institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
-        period: "Jun 2019 - Nov 2021",
-        description:
-          "Wrote a thesis on the area of Fraud detection in the field of health and motor insurance claims using data-driven fraud detection models",
-        achivements: [
-          "Fraud Detection",
-          "Conference Presentations",
-          "Journal Articles",
-          "Data Science",
+        period: "Jun 2017 - May 2021",
+        sections: [
+          {
+            title: "Framework for Fraud Detection in Motor Insurance",
+            points: [
+              "Proposed a framework for fraud detection, which includes actuarial and data science techniques",
+              "Generated 450+ business rules used for fraud detection and developed an innovative method to automate rule-generation using machine learning and data visualization",
+              "Used Python and R to develop data-driven fraud detection models for automobile and health insurance businesses with more than 100,000 records and have achieved results with 95%+ accuracy",
+              "Thesis focused on fraud detection in health and motor insurance claims using data-driven models.",
+            ],
+          },
+          {
+            title: "Academic Contributions",
+            points: [
+              "Presented research at multiple conferences.",
+              "Published findings in relevant journal articles.",
+            ],
+          },
         ],
       },
       {
         degree: "MSc (Mathematics) specialization in Actuarial Science",
         institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
         period: "Jun 2017 - Apr 2019",
-        description: "Pursued actuarial science along with mathematics masters",
-        achivements: ["Actuarial Science", "Mathematics"],
+        sections: [
+          {
+            title: "Coursework & Focus",
+            points: [
+              "Pursued actuarial science alongside mathematics masters.",
+            ],
+          },
+        ],
       },
     ],
   },
@@ -174,6 +345,69 @@ const tabContent = {
 };
 
 const ResumePage = () => {
+  // State for experience timeline
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  // Calculate total experience
+  const calculateExperience = () => {
+    const startDate = new Date(2017, 5, 1); // June 1, 2017 (Month is 0-indexed)
+    const currentDate = new Date();
+
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+
+    if (
+      months < 0 ||
+      (months === 0 && currentDate.getDate() < startDate.getDate())
+    ) {
+      years--;
+      months += 12;
+    }
+    // Adjust month if current day is less than start day (to avoid partial month counting)
+    if (currentDate.getDate() < startDate.getDate() && months > 0) {
+      months--;
+    } else if (currentDate.getDate() < startDate.getDate() && months === 0) {
+      // This case means we just passed an anniversary but not a full month yet
+      years--; // Decrement year again
+      months = 11; // Set month to 11
+    }
+
+    let result = "";
+    if (years > 0) {
+      result += `${years} year${years > 1 ? "s" : ""}`;
+    }
+    if (months > 0) {
+      if (result.length > 0) result += ", ";
+      result += `${months} month${months > 1 ? "s" : ""}`;
+    }
+    return result || "0 months"; // Fallback if less than a month
+  };
+
+  const totalExperience = calculateExperience();
+
+  // Toggle function for expanding/collapsing items
+  const handleToggle = (index: number) => {
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const experienceItems = tabContent.experience.items as ExperienceItem[];
+
+  // Animation variants for expansion
+  const detailsVariants = {
+    open: {
+      opacity: 1,
+      height: "auto",
+      marginTop: "1rem",
+      transition: { duration: 0.3 },
+    },
+    collapsed: {
+      opacity: 0,
+      height: 0,
+      marginTop: "0rem",
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
     <div className="flex flex-col justify-center py-8">
       <PageLayout>
@@ -197,41 +431,102 @@ const ResumePage = () => {
           </TabsList>
           <div className="flex-1 min-h-[400px]">
             <TabsContent value="experience">
-              <motion.h2
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-2xl font-bold mb-6 text-lightSky"
-              >
-                {tabContent.experience.title}
-              </motion.h2>
-              <div className="space-y-6">
-                {tabContent?.experience?.items.map((item, index) => (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    key={index}
-                    className="border rounded-lg border-lightSky/20 p-6"
-                  >
-                    <div className="flex flex-col md:flex-row items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-lg font-semibold">{item?.role}</h3>
-                        <p className="text-muted-foreground">{item?.company}</p>
+              <div className="flex flex-col sm:flex-row justify-between items-baseline mb-8">
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-2xl font-bold text-lightSky"
+                >
+                  {tabContent.experience.title}
+                </motion.h2>
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1, type: "spring", stiffness: 150 }}
+                  className="inline-flex items-center gap-1.5 bg-lightSky/10 border border-lightSky/20 rounded-full px-3 py-1 text-sm font-semibold text-lightSky/90 mt-2 sm:mt-0"
+                >
+                  <Clock className="w-4 h-4" />
+                  <span>Total Experience: {totalExperience}</span>
+                </motion.span>
+              </div>
+              <div className="relative pl-6 border-l-2 border-lightSky/30">
+                {experienceItems.map((item, index) => (
+                  <div key={index} className="mb-8 last:mb-0">
+                    <div
+                      className={`absolute w-4 h-4 rounded-full mt-1 -left-[9px] border-2 ${
+                        expandedIndex === index
+                          ? "bg-hoverColor border-hoverColor"
+                          : "bg-bodyColour border-lightSky/50"
+                      }`}
+                    ></div>
+                    <motion.div
+                      initial={false}
+                      onClick={() => handleToggle(index)}
+                      className="cursor-pointer hover:bg-lightSky/5 p-3 rounded-md transition-colors duration-200"
+                    >
+                      <div className="flex flex-col md:flex-row items-start justify-between mb-1">
+                        <div>
+                          <h3 className="text-lg font-semibold text-white">
+                            {item?.role}
+                          </h3>
+                          <p className="text-muted-foreground text-sm">
+                            {item?.company}
+                          </p>
+                        </div>
+                        <div className="flex items-center text-muted-foreground text-sm mt-1 md:mt-0 whitespace-nowrap">
+                          <Calendar className="h-4 w-4 mr-1.5" />
+                          {item?.period}
+                        </div>
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {item?.period}
-                      </div>
-                    </div>
-                    <p className="text-white mb-4">{item?.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.highlights.map((highlight, i) => (
-                        <Badge key={i} variant="secondary">
-                          {highlight}
-                        </Badge>
-                      ))}
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                    <AnimatePresence initial={false}>
+                      {expandedIndex === index && (
+                        <motion.div
+                          key="content"
+                          initial="collapsed"
+                          animate="open"
+                          exit="collapsed"
+                          variants={detailsVariants}
+                          className="overflow-hidden pl-3 md:pl-5"
+                        >
+                          <div className="space-y-4 mb-4">
+                            {item.sections.map((section, sectionIndex) => (
+                              <div key={sectionIndex}>
+                                <div className="flex items-start mb-2">
+                                  <span className="text-lg font-bold mr-2 mt-1 text-lightSky/80">
+                                    •
+                                  </span>
+                                  <h4 className="font-semibold text-lightSky/90">
+                                    {section.title}
+                                  </h4>
+                                </div>
+                                <ul className="list-none pl-8 space-y-1">
+                                  {section.points.map((point, pointIndex) => (
+                                    <li
+                                      key={pointIndex}
+                                      className="flex items-start text-white/80 text-sm"
+                                    >
+                                      <span className="text-xs mr-2 mt-[5px] text-lightSky/60">
+                                        ◦
+                                      </span>
+                                      {point}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {item.highlights.map((highlight, i) => (
+                              <Badge key={i} variant="secondary">
+                                {highlight}
+                              </Badge>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ))}
               </div>
             </TabsContent>
@@ -243,8 +538,8 @@ const ResumePage = () => {
               >
                 {tabContent.education.title}
               </motion.h2>
-              <div className="space-y-6">
-                {tabContent?.education?.items.map((item, index) => (
+              <div className="space-y-8">
+                {tabContent.education.items.map((item, index) => (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -266,14 +561,35 @@ const ResumePage = () => {
                         {item?.period}
                       </div>
                     </div>
-                    <p className="text-white mb-4">{item?.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.achivements.map((achievement, i) => (
-                        <Badge key={i} variant="secondary">
-                          {achievement}
-                        </Badge>
-                      ))}
-                    </div>
+                    {item.sections && (
+                      <div className="space-y-4">
+                        {item.sections.map((section, sectionIndex) => (
+                          <div key={sectionIndex}>
+                            <div className="flex items-start mb-2">
+                              <span className="text-lg font-bold mr-2 mt-1 text-lightSky/80">
+                                •
+                              </span>
+                              <h4 className="font-semibold text-lightSky/90">
+                                {section.title}
+                              </h4>
+                            </div>
+                            <ul className="list-none pl-8 space-y-1">
+                              {section.points.map((point, pointIndex) => (
+                                <li
+                                  key={pointIndex}
+                                  className="flex items-start text-white/80"
+                                >
+                                  <span className="text-sm mr-2 mt-1 text-lightSky/60">
+                                    ◦
+                                  </span>
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -326,8 +642,6 @@ const ResumePage = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  // transition={{ delay: index * 0.1 }}
-                  // key={index}
                   className="border rounded-lg border-lightSky/20 p-6"
                 >
                   <p className="text-white/90 mb-6 text-lg">

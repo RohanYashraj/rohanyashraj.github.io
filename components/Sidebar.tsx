@@ -48,7 +48,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose, pathname }) => {
           href={"/resume.pdf"}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect flex items-center gap-2"
+          className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect inline-flex items-center gap-2"
         >
           CV
           <Download className="w-4 h-4" />
