@@ -10,6 +10,8 @@ import {
   GraduationCap,
   User,
   Clock,
+  Sparkles,
+  Languages,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -30,6 +32,33 @@ interface EducationItem {
   period: string;
   sections?: { title: string; points: string[] }[];
 }
+
+// Define interface for Skill items
+interface SkillItem {
+  name: string;
+  level: number; // Level from 1 to 5
+}
+
+interface SkillCategory {
+  name: string;
+  description: string;
+  skills: SkillItem[];
+}
+
+// Timeline data structure
+interface TimelineItem {
+  year: number;
+  achievement: string;
+}
+
+const educationTimeline: TimelineItem[] = [
+  { year: 2017, achievement: "BSc" },
+  { year: 2019, achievement: "MSc" },
+  { year: 2021, achievement: "PhD" },
+  { year: 2022, achievement: "ASA" }, // Added ASA based on request
+  { year: 2024, achievement: "FIA" },
+  { year: 2025, achievement: "FIAI" },
+];
 
 const tabMenu = [
   {
@@ -246,8 +275,9 @@ const tabContent = {
     title: "Educational Background",
     items: [
       {
-        degree: "Qualified GI Actuary (FIA)",
-        institution: "Institute and Faculty of Actuaries (IFoA)",
+        degree: "Qualified GI Actuary (FIA, FIAI)",
+        institution:
+          "Institute and Faculty of Actuaries (IFoA) & Institute of Actuaries of India (IAI)",
         period: "Dec 2024",
         sections: [
           {
@@ -303,31 +333,46 @@ const tabContent = {
       {
         name: "Data Scientist - Actuary",
         description:
-          "I combine actuarial expertise with data science to analyze complex datasets, build predictive models, and develop innovative pricing strategies. My focus includes helping organizations transition from legacy Excel-based systems to modern platforms like Hyperexponential, enhancing efficiency and scalability.",
+          "Combining actuarial expertise with data science to analyze complex datasets, build predictive models, and develop innovative pricing strategies. Focused on transitioning legacy systems to modern platforms like Hyperexponential.",
         skills: [
-          "Qualified GI Actuary",
-          "Predictive Modelling",
-          "Technology transformation",
-          "Hyper Exponential",
+          { name: "Qualified GI Actuary", level: 5 },
+          { name: "Predictive Modelling", level: 4 },
+          { name: "Technology transformation", level: 4 },
+          { name: "Hyper Exponential", level: 3 },
         ],
       },
       {
         name: "Technical Skills",
         description:
-          "Proficient in Python, R, SQL, and advanced Excel for data analysis, predictive modeling, and workflow automation. I efficiently manage code and collaborate on projects using Git, GitHub, and GitLab. Skilled in creating professional dashboards, reports, and presentations with Office tools and Google Workspace.",
-        skills: ["Python", "R", "VBA", "Git", "SQL"],
+          "Proficient in Python, R, SQL, and advanced Excel for data analysis, modeling, and automation. Experienced in version control with Git/GitHub/GitLab and creating reports/dashboards with Office/Google Workspace.",
+        skills: [
+          { name: "Python", level: 5 },
+          { name: "R", level: 4 },
+          { name: "SQL", level: 4 },
+          { name: "VBA / Excel", level: 5 },
+          { name: "Git / GitHub / GitLab", level: 4 },
+        ],
       },
       {
         name: "Public Speaking & Team Collaboration",
         description:
-          "I have delivered presentation on multiple international conferences simplifying complex topics, and facilitating discussions with diverse audiences. I thrive in cross-functional team collaboration, effectively managing stakeholders, driving consensus, and fostering a supportive and productive environment.",
-        skills: ["Public Speaker", "Conferences", "Team Work"],
+          "Experienced presenter at international conferences, simplifying complex topics. Thrive in cross-functional teams, managing stakeholders, driving consensus, and fostering productive environments.",
+        skills: [
+          { name: "Public Speaking", level: 4 },
+          { name: "Stakeholder Management", level: 4 },
+          { name: "Team Collaboration", level: 5 },
+        ],
       },
       {
-        name: "Building Web Apps",
+        name: "Building Web Apps & Dashboards",
         description:
-          "I enjoy building web applications that make complex processes more accessible and user-friendly. With a good foundation in full-stack development.",
-        skills: ["RShiny", "Next.js", "Flask", "PowerBI"],
+          "Enjoy building web applications and dashboards to make complex processes accessible. Foundational skills in full-stack development and data visualization tools.",
+        skills: [
+          { name: "RShiny", level: 4 },
+          { name: "Next.js / React", level: 3 },
+          { name: "Flask", level: 3 },
+          { name: "PowerBI", level: 4 },
+        ],
       },
     ],
   },
@@ -342,6 +387,19 @@ const tabContent = {
     ],
     languages: ["English", "Hindi", "Nepali"],
   },
+};
+
+// Simple component to render skill level bar
+const SkillLevelBar = ({ level }: { level: number }) => {
+  const maxLevel = 5;
+  return (
+    <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+      <div
+        className="h-full bg-lightSky rounded-full"
+        style={{ width: `${(level / maxLevel) * 100}%` }}
+      ></div>
+    </div>
+  );
 };
 
 const ResumePage = () => {
@@ -534,10 +592,103 @@ const ResumePage = () => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-2xl font-bold mb-6 text-lightSky"
+                className="text-2xl font-bold mb-8 text-lightSky"
               >
                 {tabContent.education.title}
               </motion.h2>
+
+              {/* Qualifications Section */}
+              <div className="mb-10">
+                <h3 className="text-xl font-semibold mb-4 text-white">
+                  Qualifications
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  <Badge
+                    variant="default"
+                    className="text-lg px-4 py-1.5 font-semibold text-black bg-gradient-to-br from-lightSky to-hoverColor shadow-lg shadow-hoverColor/40 rounded-md transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl"
+                  >
+                    PhD
+                  </Badge>
+                  <Badge
+                    variant="default"
+                    className="text-lg px-4 py-1.5 font-semibold text-black bg-gradient-to-br from-lightSky to-hoverColor shadow-lg shadow-hoverColor/40 rounded-md transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl"
+                  >
+                    FIA
+                  </Badge>
+                  <Badge
+                    variant="default"
+                    className="text-lg px-4 py-1.5 font-semibold text-black bg-gradient-to-br from-lightSky to-hoverColor shadow-lg shadow-hoverColor/40 rounded-md transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl"
+                  >
+                    FIAI
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Education Timeline Section - Responsive Zigzag/Horizontal */}
+              <div className="mb-12">
+                <h3 className="text-xl font-semibold mb-8 text-white">
+                  Milestones
+                </h3>
+                {/* Container: Handles flex direction change */}
+                <div className="relative flex flex-col md:flex-row md:justify-between md:items-start md:space-y-0 md:w-full md:px-4 w-full px-10">
+                  {/* Background Horizontal Line (Desktop Only) */}
+                  <div className="absolute top-[1.875rem] left-0 w-full h-0.5 bg-lightSky/30 -translate-y-1/2 hidden md:block"></div>
+                  {/* Central Vertical Line (Mobile Only) */}
+                  <div className="absolute top-0 left-1/2 w-0.5 h-full bg-lightSky/30 -translate-x-1/2 md:hidden"></div>
+
+                  {educationTimeline.map((item, index) => (
+                    <div
+                      key={item.year}
+                      // Item container: Mobile alternating alignment, Desktop centered alignment
+                      className={`relative flex flex-col z-10 md:flex-1 ${
+                        index % 2 === 0
+                          ? "items-start text-left"
+                          : "items-end text-right"
+                      } md:items-center md:text-center ${
+                        index < educationTimeline.length - 1
+                          ? "mb-10 md:mb-0"
+                          : ""
+                      }`}
+                      style={{ minWidth: "80px" }}
+                    >
+                      {/* Year Above */}
+                      <span className="text-xs font-semibold text-lightSky mb-1 h-4 leading-4">
+                        {item.year}
+                      </span>
+
+                      {/* Dot Container - Mobile alternating justify, Desktop centered justify */}
+                      <div
+                        className={`relative w-full flex ${
+                          index % 2 === 0 ? "justify-start" : "justify-end"
+                        } md:justify-center mb-1`}
+                      >
+                        <div className="relative w-5 h-5">
+                          {/* Mobile horizontal line segment */}
+                          <div
+                            className={`absolute top-1/2 w-[calc(50vw-2.5rem-0.625rem)] h-0.5 bg-lightSky/50 ${
+                              index % 2 === 0
+                                ? "left-full ml-0.5"
+                                : "right-full mr-0.5"
+                            } -translate-y-1/2 z-0 md:hidden`}
+                          ></div>
+                          {/* Dot */}
+                          <span className="absolute top-0 left-0 block w-5 h-5 bg-hoverColor rounded-full border-2 border-lightSky z-10"></span>
+                        </div>
+                      </div>
+
+                      {/* Achievement Below */}
+                      <span className="text-sm text-white whitespace-nowrap mt-1">
+                        {item.achievement}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Detailed Education List Heading */}
+              <h3 className="text-xl font-semibold mb-6 text-white">Details</h3>
+
+              {/* Detailed Education List */}
               <div className="space-y-8">
                 {tabContent.education.items.map((item, index) => (
                   <motion.div
@@ -549,15 +700,15 @@ const ResumePage = () => {
                   >
                     <div className="flex flex-col md:flex-row items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold">
+                        <h3 className="text-lg font-semibold mb-1">
                           {item?.degree}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground text-sm">
                           {item?.institution}
                         </p>
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
+                      <div className="flex items-center text-muted-foreground text-sm mt-1 md:mt-0 whitespace-nowrap">
+                        <Calendar className="h-4 w-4 mr-1.5" />
                         {item?.period}
                       </div>
                     </div>
@@ -598,32 +749,43 @@ const ResumePage = () => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-2xl font-bold mb-6 text-lightSky"
+                className="text-2xl font-bold mb-8 text-lightSky"
               >
                 {tabContent.skills.title}
               </motion.h2>
-              <div className="space-y-6">
-                {tabContent?.skills?.categories.map((item, index) => (
+              <div className="space-y-8">
+                {tabContent?.skills?.categories.map((category, index) => (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     key={index}
-                    className="border rounded-lg border-lightSky/20 p-6"
+                    className="border rounded-lg border-lightSky/20 p-6 bg-bodyColour/50"
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-lg font-semibold">{item?.name}</h3>
-                        <p className="text-muted-foreground">
-                          {item?.description}
-                        </p>
-                      </div>
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        {category?.name}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {category?.description}
+                      </p>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {item.skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary">
-                          {skill}
-                        </Badge>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-40 gap-y-4">
+                      {category.skills.map((skill, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center justify-between"
+                        >
+                          <span className="text-white/90 text-sm flex-grow pr-2">
+                            {skill.name}
+                          </span>
+                          <div className="flex items-center gap-2 flex-shrink-0 w-32">
+                            <SkillLevelBar level={skill.level} />
+                            <span className="text-xs text-lightSky/80 w-6 text-right">
+                              {skill.level}/5
+                            </span>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </motion.div>
@@ -634,43 +796,51 @@ const ResumePage = () => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-2xl font-bold mb-6 text-lightSky"
+                className="text-2xl font-bold mb-8 text-lightSky"
               >
                 {tabContent.about.title}
               </motion.h2>
-              <div className="space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="border rounded-lg border-lightSky/20 p-6"
-                >
-                  <p className="text-white/90 mb-6 text-lg">
-                    {tabContent.about.bio}
-                  </p>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Interests</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {tabContent.about.interests.map((interest, i) => (
-                          <Badge key={i} variant="secondary">
-                            {interest}
-                          </Badge>
-                        ))}
-                      </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="border rounded-lg border-lightSky/20 p-6 bg-bodyColour/50"
+              >
+                <p className="text-white/90 mb-8 text-lg leading-relaxed">
+                  {tabContent.about.bio}
+                </p>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <Sparkles className="w-5 h-5 text-lightSky" />
+                      <h3 className="text-lg text-lightSky font-medium">
+                        Interests
+                      </h3>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Languages</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {tabContent.about.languages.map((language, i) => (
-                          <Badge key={i} variant="secondary">
-                            {language}
-                          </Badge>
-                        ))}
-                      </div>
+                    <div className="flex flex-wrap gap-2 pl-7">
+                      {tabContent.about.interests.map((interest, i) => (
+                        <Badge key={i} variant="secondary" className="text-sm">
+                          {interest}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                </motion.div>
-              </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <Languages className="w-5 h-5 text-lightSky" />
+                      <h3 className="text-lg text-lightSky font-medium">
+                        Languages
+                      </h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pl-7">
+                      {tabContent.about.languages.map((language, i) => (
+                        <Badge key={i} variant="secondary" className="text-sm">
+                          {language}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </TabsContent>
           </div>
         </Tabs>
