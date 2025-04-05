@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import WorkClientContent from "./WorkClientContent"; // Import the client component
+import { Suspense } from "react"; // Import Suspense
 
 // Define page-specific metadata
 export const metadata: Metadata = {
@@ -43,5 +44,9 @@ export const metadata: Metadata = {
 
 // This is the Server Component that wraps the Client Component
 export default function WorkPage() {
-  return <WorkClientContent />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WorkClientContent />
+    </Suspense>
+  );
 }
