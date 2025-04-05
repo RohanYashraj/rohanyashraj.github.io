@@ -1,47 +1,47 @@
 import { Metadata } from "next";
-import PageLayout from "@/components/PageLayout";
-import Title from "@/components/Title";
-import { Separator } from "@/components/ui/separator";
 import { servicesData } from "@/data/servicesData";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
+import PageLayout from "@/components/PageLayout";
+import Title from "@/components/Title";
+import { Separator } from "@/components/ui/separator";
 
 // Define page-specific metadata for Services
 export const metadata: Metadata = {
-  title: "Services | Dr. Rohan Yashraj Gupta, FIA",
+  title: "Services | Dr. Rohan Yashraj Gupta, FIA, FIAI",
   description:
-    "Discover the actuarial and data science services offered by Dr. Rohan Gupta, FIA, including consulting, modeling, and technical solutions.",
+    "Discover the actuarial and data science services offered by Dr. Rohan Yashraj Gupta, FIA, FIAI, including consulting, modeling, and technical solutions.",
   keywords: [
     "Actuarial Services",
-    "Data Science Services",
+    "Data Science Consulting",
     "Insurance Consulting",
     "Predictive Modeling Services",
-    "Rohan Gupta Services",
-    "Actuarial Consulting",
-    "Data Analysis Services",
     "Machine Learning Consulting",
+    "Rohan Gupta Services",
+    "Dr. Rohan Yashraj Gupta",
+    "FIAI",
   ],
   alternates: {
     canonical: "https://rohanyashraj.github.io/services",
   },
   openGraph: {
-    title: "Services | Dr. Rohan Yashraj Gupta, FIA",
+    title: "Services | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
-      "Actuarial and data science services offered by Dr. Rohan Gupta, FIA.",
+      "Actuarial and data science services offered by Dr. Rohan Yashraj Gupta, FIA, FIAI.",
     url: "https://rohanyashraj.github.io/services",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg", // Consistent profile image
+        url: "https://rohanyashraj.github.io/profile.jpg",
         width: 1200,
         height: 1200,
-        alt: "Services - Dr. Rohan Gupta",
+        alt: "Services - Dr. Rohan Yashraj Gupta, FIA, FIAI",
       },
     ],
   },
   twitter: {
-    title: "Services | Dr. Rohan Yashraj Gupta, FIA",
+    title: "Services | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
-      "Actuarial and data science services offered by Dr. Rohan Gupta, FIA.",
+      "Actuarial and data science services offered by Dr. Rohan Yashraj Gupta, FIA, FIAI.",
     images: ["https://rohanyashraj.github.io/profile.jpg"],
   },
 };

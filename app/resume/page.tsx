@@ -1,45 +1,43 @@
 import { Metadata } from "next";
 import ResumeClientContent from "./ResumeClientContent"; // Import the client component
 
-// Define page-specific metadata for Resume
+// Define page-specific metadata
 export const metadata: Metadata = {
-  title: "Resume | Dr. Rohan Yashraj Gupta, FIA",
+  title: "Resume | Dr. Rohan Yashraj Gupta, FIA, FIAI",
   description:
-    "View the professional resume of Dr. Rohan Gupta, FIA. Details on experience, education, skills in actuarial science, data science, and tech.",
+    "View the professional resume of Dr. Rohan Yashraj Gupta, FIA, FIAI. Details on experience, education, skills in actuarial science, data science, and tech.",
   keywords: [
     "Rohan Gupta Resume",
+    "Dr. Rohan Yashraj Gupta",
     "Actuary Resume",
     "Data Scientist Resume",
-    "Actuarial Experience",
-    "Actuarial Education",
     "FIA Resume",
-    "PhD Actuarial Science",
-    "Insurance Resume",
-    "Python",
-    "R",
-    "SQL",
-    "Predictive Modeling",
+    "FIAI Resume",
+    "General Insurance Resume",
+    "Actuarial Experience",
+    "Data Science Skills",
   ],
   alternates: {
     canonical: "https://rohanyashraj.github.io/resume",
   },
   openGraph: {
-    title: "Resume | Dr. Rohan Yashraj Gupta, FIA",
+    title: "Resume | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
-      "Detailed resume of Dr. Rohan Gupta, FIA: Experience, Education, Skills.",
+      "Detailed resume of Dr. Rohan Yashraj Gupta, FIA, FIAI: Experience, Education, Skills.",
     url: "https://rohanyashraj.github.io/resume",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg", // Consistent profile image
+        url: "https://rohanyashraj.github.io/profile.jpg",
         width: 1200,
         height: 1200,
-        alt: "Resume - Dr. Rohan Gupta",
+        alt: "Resume - Dr. Rohan Yashraj Gupta, FIA, FIAI",
       },
     ],
   },
   twitter: {
-    title: "Resume | Dr. Rohan Yashraj Gupta, FIA",
-    description: "View the professional resume of Dr. Rohan Gupta, FIA.",
+    title: "Resume | Dr. Rohan Yashraj Gupta, FIA, FIAI",
+    description:
+      "View the professional resume of Dr. Rohan Yashraj Gupta, FIA, FIAI.",
     images: ["https://rohanyashraj.github.io/profile.jpg"],
   },
 };

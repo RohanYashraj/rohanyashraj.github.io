@@ -8,38 +8,43 @@ import { Toaster } from "@/components/ui/toaster";
 import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+  title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
   description:
-    "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+    "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI. He specializes in Data Science and General Insurance.",
   keywords: [
     "Actuary",
     "Data Scientist",
     "General Insurance",
     "Machine Learning",
     "FIA",
+    "FIAI",
     "Rohan Gupta",
+    "Dr. Rohan Yashraj Gupta",
     "Actuarial Science",
     "Portfolio",
   ],
   authors: [
-    { name: "Dr. Rohan Yashraj Gupta", url: "https://rohanyashraj.github.io" },
+    {
+      name: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
+      url: "https://rohanyashraj.github.io",
+    },
   ],
-  creator: "Dr. Rohan Yashraj Gupta, FIA",
+  creator: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+    title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     description:
-      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA.",
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI.",
     creator: "@Rohan_Yashraj", // Replace with your actual Twitter handle
     images: ["https://rohanyashraj.github.io/profile.jpg"], // Relative path for Twitter
   },
   openGraph: {
-    title: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+    title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     description:
-      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI. He specializes in Data Science and General Insurance.",
     url: "https://rohanyashraj.github.io",
     type: "website",
-    siteName: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+    siteName: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     images: [
       {
         url: "https://rohanyashraj.github.io/profile.jpg", // Replace with actual image URL
@@ -73,16 +78,16 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Dr. Rohan Yashraj Gupta, FIA | Actuary & Data Scientist",
+    name: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     url: "https://rohanyashraj.github.io",
     description:
-      "Explore the actuarial journey, projects, and insights of Dr. Rohan Gupta, FIA. He specializes in Data Science and General Insurance.",
+      "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI. He specializes in Data Science and General Insurance.",
   };
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Dr. Rohan Yashraj Gupta",
+    name: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
     alternateName: "Rohan Gupta",
     url: "https://rohanyashraj.github.io",
     jobTitle: "Actuary & Data Scientist", // You might want to make this more specific or add multiple

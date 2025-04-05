@@ -6,39 +6,39 @@ import { Mail, MapPinCheck, Phone } from "lucide-react";
 
 // Define page-specific metadata for Contact
 export const metadata: Metadata = {
-  title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+  title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA, FIAI",
   description:
-    "Get in touch with Dr. Rohan Gupta, FIA. Contact information and form for inquiries, collaborations, or general questions.",
+    "Get in touch with Dr. Rohan Yashraj Gupta, FIA, FIAI. Contact information and form for inquiries, collaborations, or general questions.",
   keywords: [
     "Contact Rohan Gupta",
+    "Dr. Rohan Yashraj Gupta",
     "Actuary Contact",
     "Data Scientist Contact",
-    "Rohan Gupta Email",
-    "Rohan Gupta Phone",
-    "Actuarial Inquiry",
-    "Data Science Collaboration",
+    "Insurance Inquiry",
+    "Collaboration Actuary",
+    "FIAI Contact",
   ],
   alternates: {
     canonical: "https://rohanyashraj.github.io/contact",
   },
   openGraph: {
-    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
-      "Contact Dr. Rohan Gupta, FIA for professional inquiries or collaborations.",
+      "Contact Dr. Rohan Yashraj Gupta, FIA, FIAI for professional inquiries or collaborations.",
     url: "https://rohanyashraj.github.io/contact",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg", // Consistent profile image
+        url: "https://rohanyashraj.github.io/profile.jpg",
         width: 1200,
         height: 1200,
-        alt: "Contact - Dr. Rohan Gupta",
+        alt: "Contact - Dr. Rohan Yashraj Gupta, FIA, FIAI",
       },
     ],
   },
   twitter: {
-    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA",
+    title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
-      "Contact Dr. Rohan Gupta, FIA for professional inquiries or collaborations.",
+      "Contact Dr. Rohan Yashraj Gupta, FIA, FIAI for professional inquiries or collaborations.",
     images: ["https://rohanyashraj.github.io/profile.jpg"],
   },
 };
