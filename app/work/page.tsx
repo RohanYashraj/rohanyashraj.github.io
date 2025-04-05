@@ -16,6 +16,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // Import icons for tabs
 import { FolderKanban, Presentation, FileText } from "lucide-react";
+import { useSearchParams } from "next/navigation"; // Import useSearchParams
 
 // Import shared data
 import {
@@ -298,6 +299,9 @@ const ConferenceTimeline = ({ presentations }: ConferenceTimelineProps) => {
 };
 
 const WorkPage = () => {
+  const searchParams = useSearchParams();
+  const initialTab = searchParams.get("tab") || "projects"; // Get tab param or default
+
   // Calculate counts
   const projectCount = projects.length;
   const presentationCount = conferencePresentations.length; // Use imported data
@@ -318,7 +322,7 @@ const WorkPage = () => {
     <div className="py-8">
       <PageLayout>
         <Tabs
-          defaultValue="projects"
+          defaultValue={initialTab} // Use initialTab as defaultValue
           className="w-full flex flex-col md:flex-row gap-6 md:gap-10"
         >
           {/* Left Sidebar Wrapper for TabsList and Summary Cards */}

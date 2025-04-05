@@ -1,5 +1,6 @@
 "use client";
 import CountUp from "react-countup";
+import Link from "next/link";
 import {
   projects,
   conferencePresentations,
@@ -92,39 +93,46 @@ const Statistics = () => {
     {
       num: yearsExperience,
       title: "Years of Experience",
+      href: "/resume",
     },
     {
       num: projectCount,
       title: "Projects Completed",
+      href: "/work?tab=projects",
     },
     {
       num: presentationCount,
       title: "Conference Presentations",
+      href: "/work?tab=presentations",
     },
     {
       num: publicationCount,
       title: "Research Publications",
+      href: "/work?tab=publications",
     },
   ];
 
   return (
     <div className="flex flex-col items-center md:flex-row gap-2.5 md:gap-5">
       {statsData?.map((item, index) => (
-        <div
+        <Link
+          href={item.href}
           key={index}
-          className="flex flex-1 gap-4 md:gap-4 flex-col md:flex-row items-center justify-center lg:justify-start"
+          className="flex-1 hover:opacity-80 transition-opacity duration-200"
         >
-          <CountUp
-            end={item?.num}
-            duration={5}
-            delay={2}
-            className="text-4xl lg:text-6xl font-extrabold text-white"
-          />
-          <p className="leading-snug text-sm">
-            {item.title}
-            {item.title === "Years of Experience" && "+"}
-          </p>
-        </div>
+          <div className="flex w-full gap-4 md:gap-4 flex-col md:flex-row items-center justify-center lg:justify-start">
+            <CountUp
+              end={item?.num}
+              duration={5}
+              delay={2}
+              className="text-4xl lg:text-6xl font-extrabold text-white"
+            />
+            <p className="leading-snug text-sm">
+              {item.title}
+              {item.title === "Years of Experience" && "+"}
+            </p>
+          </div>
+        </Link>
       ))}
     </div>
   );
