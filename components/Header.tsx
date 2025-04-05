@@ -38,10 +38,10 @@ const Header = () => {
             </Link>
           ))}
           <Link
-            href={"/resume.pdf"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect flex items-center gap-2"
+            href={"/resume/view"}
+            // target="_blank"
+            // rel="noopener noreferrer"
+            className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect"
           >
             CV
             <Download className="w-4 h-4" />

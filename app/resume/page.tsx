@@ -39,7 +39,12 @@ const tabContent = {
         period: "Jul 2023 - Present",
         description:
           "At Accenture, I lead a team of actuarial professionals and data science experts to transition Excel-based raters into Python-based solutions on the Hyper Exponential cloud platform for the North America region. This initiative aims to streamline pricing processes and enhance efficiency in client deliverables.",
-        highlights: ["React", "Python"],
+        highlights: [
+          "Team Lead",
+          "Data Science",
+          "Agile Methodologies",
+          "Project Management",
+        ],
       },
       {
         role: "Actuarial Consultant",
@@ -47,7 +52,12 @@ const tabContent = {
         period: "Dec 2022 - Jul 2023",
         description:
           "At RSA, I developed and implemented a machine learning model for motor insurance fraud detection, achieving a 20% improvement in the fraud detection success rate. I conducted resource estimation through FTE analysis to recover overlooked benefits and created effective business rules based on SIRA reports, reducing potentially fraudulent applications by 70%.",
-        highlights: ["React", "Python"],
+        highlights: [
+          "Fraud Analysis",
+          "Data Analytics",
+          "Predictive Modeling",
+          "Risk Assessment",
+        ],
       },
       {
         role: "Actuarial Analyst",
@@ -55,7 +65,7 @@ const tabContent = {
         period: "Jun 2021 - Dec 2022",
         description:
           "While at Swiss Re, I supported pricing for over 30 quotes across life, health, and disability products for the South-East Asia market. I conducted experience studies using R, resulting in cost revisions aligned with actual claims experience. Additionally, I developed models for premium trend analysis and data visualization, collaborated with underwriting teams to launch three new critical illness products, and presented findings to clients and senior leadership, including a presentation on decision-tree-based machine learning.",
-        highlights: ["React", "Python"],
+        highlights: ["Reinsurance Pricing", "Communication", "Documentation"],
       },
       {
         role: "Actuarial Consultant",
@@ -63,7 +73,7 @@ const tabContent = {
         period: "Jun 2019 - Jun 2021",
         description:
           "At Tech Actuarial, I worked on diverse projects, including claims analytics for Ayushman Bharat, where I analyzed 200,000 health insurance records, improving claims management efficiency by 20%. I built RShiny dashboards and Python-based tools for tracking claims and detecting fraud. For crop insurance, I developed ARIMA models to project crop yields and dashboards for futures tracking, reducing manual processing time by 70%. I also priced cancer products across 28 states, created valuation models for defined benefit pension schemes, and prepared consulting pitch presentations for various clients.",
-        highlights: ["React", "Python"],
+        highlights: ["Python", "R", "Excel Tools", "Business Analytics"],
       },
       {
         role: "CAS Summer Internship Program",
@@ -71,7 +81,7 @@ const tabContent = {
         period: "Jun 2020 - Aug 2020",
         description:
           "During my internship with the CAS, I worked on property and casualty pricing, reserving, and predictive modeling projects using Cognalysis Multirate software. I was recognized as a CAS Spotlight Candidate for demonstrating exceptional actuarial skills and contributing valuable insights.",
-        highlights: ["React", "Python"],
+        highlights: ["Pricing", "Reserving", "Soft Skills", "Case Study"],
       },
       {
         role: "Research Associate",
@@ -79,7 +89,7 @@ const tabContent = {
         period: "Jun 2017- Jun 2019",
         description:
           "As a Research Associate, I focused on fraud detection frameworks for group health insurance schemes, integrating actuarial and data science methodologies to improve fraud detection capabilities",
-        highlights: ["React", "Python"],
+        highlights: ["Insurance Fraud Precention", "Data Science"],
       },
     ],
   },
@@ -87,36 +97,32 @@ const tabContent = {
     title: "Educational Background",
     items: [
       {
-        degree: "Actuarial Team Lead",
-        institution: "Accenture",
-        period: "Jul 2023 - Present",
+        degree: "Qualified GI Actuary (FIA)",
+        institution: "Institute and Faculty of Actuaries (IFoA)",
+        period: "Dec 2024",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+          "Wrote my first actuarial exam on Sep 2017 and qualified as a GI actuary on Dec 2024",
+        achivements: ["Actuary", "Predictive Modeling"],
       },
       {
-        degree: "Actuarial Consultant",
-        institution: "RSA",
-        period: "Dec 2022 - Jul 2023",
+        degree: "Doctor of Philosophy (PhD)",
+        institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
+        period: "Jun 2019 - Nov 2021",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+          "Wrote a thesis on the area of Fraud detection in the field of health and motor insurance claims using data-driven fraud detection models",
+        achivements: [
+          "Fraud Detection",
+          "Conference Presentations",
+          "Journal Articles",
+          "Data Science",
+        ],
       },
       {
-        degree: "Actuarial Analyst",
-        institution: "SwissRe",
-        period: "Jun 2021 - Dec 2022",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
-      },
-      {
-        degree: "Actuarial Consultant",
-        institution: "Tech Actuarial",
-        period: "Jun 2019 - Jun 2021",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        achivements: ["React", "Python"],
+        degree: "MSc (Mathematics) specialization in Actuarial Science",
+        institution: "Sri Sathya Sai Institute of Higher Learning (SSSIHL)",
+        period: "Jun 2017 - Apr 2019",
+        description: "Pursued actuarial science along with mathematics masters",
+        achivements: ["Actuarial Science", "Mathematics"],
       },
     ],
   },
@@ -124,30 +130,46 @@ const tabContent = {
     title: "Technical Skills",
     categories: [
       {
-        name: "Actuarial Team Lead",
+        name: "Data Scientist - Actuary",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
+          "I combine actuarial expertise with data science to analyze complex datasets, build predictive models, and develop innovative pricing strategies. My focus includes helping organizations transition from legacy Excel-based systems to modern platforms like Hyperexponential, enhancing efficiency and scalability.",
+        skills: [
+          "Qualified GI Actuary",
+          "Predictive Modelling",
+          "Technology transformation",
+          "Hyper Exponential",
+        ],
       },
       {
-        name: "Actuarial Team Lead",
+        name: "Technical Skills",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
+          "Proficient in Python, R, SQL, and advanced Excel for data analysis, predictive modeling, and workflow automation. I efficiently manage code and collaborate on projects using Git, GitHub, and GitLab. Skilled in creating professional dashboards, reports, and presentations with Office tools and Google Workspace.",
+        skills: ["Python", "R", "VBA", "Git", "SQL"],
       },
       {
-        name: "Actuarial Team Lead",
+        name: "Public Speaking & Team Collaboration",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cum cumque, possimus cupiditate architecto molestias iusto doloribus laudantium quae eaque odit maiores hic totam libero.",
-        skills: ["React", "Python"],
+          "I have delivered presentation on multiple international conferences simplifying complex topics, and facilitating discussions with diverse audiences. I thrive in cross-functional team collaboration, effectively managing stakeholders, driving consensus, and fostering a supportive and productive environment.",
+        skills: ["Public Speaker", "Conferences", "Team Work"],
+      },
+      {
+        name: "Building Web Apps",
+        description:
+          "I enjoy building web applications that make complex processes more accessible and user-friendly. With a good foundation in full-stack development.",
+        skills: ["RShiny", "Next.js", "Flask", "PowerBI"],
       },
     ],
   },
   about: {
     title: "About Me",
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum quia eligendi iusto beatae corrupti quisquam quos sed dolorem minima, ipsam culpa veniam eos voluptatem?",
-    interests: ["coding", "listing to music"],
-    languages: ["English", "Hindi"],
+    bio: "I am always seeking new challenges and opportunities to grow in my field and am excited to see where my skills and passion takes me.",
+    interests: [
+      "Programming",
+      "Staying upto date with latest technologies",
+      "Listening to music",
+      "Chilling with friends",
+    ],
+    languages: ["English", "Hindi", "Nepali"],
   },
 };
 
