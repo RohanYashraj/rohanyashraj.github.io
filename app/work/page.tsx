@@ -14,7 +14,6 @@ import projectThree from "@/images/projectThree.jpg";
 import projectFour from "@/images/projectFour.jpg";
 import projectFive from "@/images/projectFive.jpg";
 import projectSix from "@/images/projectSix.jpg";
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
@@ -25,7 +24,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { ArrowUpRight, Github, icons } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -98,23 +97,10 @@ const projects = [
 ];
 
 const WorkPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleSlideChange = (index: number) => {
-    setCurrentIndex(index);
-  };
   return (
     <div className="py-6 md:py-8">
       <PageLayout>
-        <Carousel
-          opts={{ align: "start", loop: true }}
-          className="w-full"
-          onSelect={() => {
-            const index = 0;
-            if (typeof index === "number") {
-              handleSlideChange(index);
-            }
-          }}
-        >
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
           <CarouselContent>
             {projects?.map((project) => (
               <CarouselItem key={project.id}>
@@ -193,7 +179,7 @@ const WorkPage = () => {
                       </div>
                       {/* image */}
                       <div className="w-full md:w-1/2 order-1 md:order-2">
-                        <div className="relative h-64 md:h-96 bg-gray-700 rounded-lg overflow-hidden">
+                        <div className="relative h-72 sm:h-96 bg-gray-700 rounded-lg overflow-hidden">
                           <Image
                             src={project?.image}
                             alt={project.title}

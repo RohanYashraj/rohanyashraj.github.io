@@ -7,7 +7,6 @@ import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import SuccessMsg from "./SuccessMsg";
 import emailjs from "@emailjs/browser";
-import { ToastAction } from "@radix-ui/react-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -54,13 +53,13 @@ const ContactForm = () => {
       form.append("DateTime", currentDataTime);
       emailjs
         .send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
           // "service_dpajk79",
           // "template_mro3ef3",
           formData,
           {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
           }
         )
         .then(

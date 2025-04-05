@@ -1,4 +1,4 @@
-import { animate, motion } from "motion/react";
+import { motion } from "motion/react";
 
 const Stairs = () => {
   const stairAnimation = {
