@@ -2,12 +2,6 @@
 
 import PageLayout from "@/components/PageLayout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import projectOne from "@/images/projectOne.jpeg";
-import projectTwo from "@/images/projectTwo.jpg";
-import projectThree from "@/images/projectThree.jpg";
-import projectFour from "@/images/projectFour.jpg";
-import projectFive from "@/images/projectFive.jpg";
-import projectSix from "@/images/projectSix.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
@@ -20,147 +14,21 @@ import {
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { StaticImageData } from "next/image";
-
 // Import icons for tabs
 import { FolderKanban, Presentation, FileText } from "lucide-react";
 
-// Define interface for work items
-interface WorkItemProps {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  stack: string[];
-  image: StaticImageData;
-  liveUrl?: string;
-  githubUrl?: string;
-}
+// Import shared data
+import {
+  projects,
+  conferencePresentations,
+  researchPublications,
+  WorkItemProps,
+} from "@/data/workData"; // Adjust path if needed
 
-const projects: WorkItemProps[] = [
-  {
-    id: "01",
-    title: "SOA Research",
-    category: "Research",
-    description:
-      "This project endeavors to deliver a comprehensive research paper outlining a framework for interpretable machine learning algorithms tailored for fraud detection in health insurance. Machine learning algorithms excel at constructing intricate models by discerning patterns in data, yet the risk of overfitting to training data necessitates rigorous testing by modelers and users. While certain validation practices for linear models apply to machine learning, the challenge of interpretability remains pronounced.",
-    stack: ["Interpretable ML", "Fraud Detection", "Health Insurance"],
-    image: projectOne,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "02",
-    title: "CAS Research",
-    category: "Research",
-    description:
-      "Health insurance fraud is a significant problem affecting the insurance industry, resulting in billions of dollars in losses annually. We propose a novel approach to fraud detection in health insurance by integrating machine learning (ML) models with business rule triggers to identify unusual patterns in claims data and flag them for further investigation. We have demonstrated that incorporating machine learning models with business rule triggers greatly enhanced the performance across all models.",
-    stack: ["Machine Learning", "Business Rules", "Fraud Detection"],
-    image: projectTwo,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "03",
-    title: "Health Claims Analytics",
-    category: "Consulting",
-    description:
-      "The project involved collaborating with a Property and Casualty Insurer in India. The focus was on group health insurance scheme, covering approximately 800 million people. Our primary goal was to design a pricing methodology, real-time claims analytics dashboard and fraud detection for a state-level scheme and provide insights to optimize reinsurance capacity. The effort spanned two person-years and held significant value.",
-    stack: ["Pricing", "Dashboard", "Fraud Detection", "Reinsurance"],
-    image: projectThree,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "04",
-    title: "Crop Revenue Protection",
-    category: "Consulting",
-    description:
-      "The project involved collaborating with a department within the Government of India. Our objective was to design and a hedging mechanism that effectively protects revenue for farmers arising from price fluctuations. The effort spanned two person-years and held significant value.",
-    stack: ["Hedging", "Agriculture", "Risk Management"],
-    image: projectFour,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "05",
-    title: "Cancer Pool Pricing",
-    category: "Consulting",
-    description:
-      "The project centered around developing a medical indemnity insurance solution tailored for the Indian middle class. We meticulously analyzed various factors, including different cancer types, their incidence rates, and treatment costs, to determine an optimal pricing strategy. The resulting dashboard presents premium details, frequency, and severity across diverse options, considering variations in states and age groups. This comprehensive approach ensures effective risk management and affordability for policyholders.",
-    stack: ["Insurance Pricing", "Health Insurance", "Data Analysis"],
-    image: projectFive,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "06",
-    title: "Insurance Fraud Classifier",
-    category: "PhD",
-    description:
-      "The project focused on constructing a robust fraud detection model for insurance claims. Specifically, we developed a machine learning-based solution that enables users to assess the probability of fraud in motor insurance claims. This model enhances the accuracy and efficiency of fraud detection processes within the insurance domain.",
-    stack: ["Machine Learning", "Fraud Detection", "Motor Insurance"],
-    image: projectSix,
-    liveUrl: "",
-    githubUrl: "",
-  },
-];
+// Sort presentations by date descending - MOVED to WorkPage component where it's used
+// const sortedConferencePresentations = [...conferencePresentations].sort(...);
 
-// Data for Conference Presentations
-const conferencePresentations: WorkItemProps[] = [
-  {
-    id: "CP01",
-    title: "Interpretable ML for Health Insurance Fraud",
-    category: "Conference Presentation",
-    description:
-      "Presented findings on developing interpretable machine learning frameworks for detecting fraudulent health insurance claims at the Annual Actuarial Conclave.",
-    stack: ["SOA Conclave 2023", "Mumbai"],
-    image: projectOne,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "CP02",
-    title: "ML and Business Rules for Fraud Detection",
-    category: "Conference Presentation",
-    description:
-      "Discussed the synergy of machine learning models and business rule triggers in enhancing fraud detection accuracy in health insurance at the CAS Spring Meeting.",
-    stack: ["CAS Meeting 2022", "Virtual"],
-    image: projectTwo,
-    liveUrl: "",
-    githubUrl: "",
-  },
-];
-
-// Data for Research Publications
-const researchPublications: WorkItemProps[] = [
-  {
-    id: "RP01",
-    title:
-      "A Framework for Interpretable Machine Learning in Health Insurance Fraud Detection",
-    category: "Research Publication",
-    description:
-      "Published research detailing a framework for building transparent and understandable ML models for health insurance fraud detection.",
-    stack: ["Journal of Actuarial Science", "2023"],
-    image: projectOne,
-    liveUrl: "",
-    githubUrl: "",
-  },
-  {
-    id: "RP02",
-    title:
-      "Enhancing Health Insurance Fraud Detection using Machine Learning and Business Rule Integration",
-    category: "Research Publication",
-    description:
-      "Paper demonstrating the improved performance of fraud detection systems when combining machine learning predictions with predefined business rules.",
-    stack: ["Insurance: Mathematics and Economics", "2022"],
-    image: projectTwo,
-    liveUrl: "",
-    githubUrl: "",
-  },
-];
-
-// Reusable component to render a single work item card
+// Reusable component to render a single work item card (Used for Projects)
 const WorkItemCard = ({ item }: { item: WorkItemProps }) => (
   <Card className="bg-bodyColour border-lightSky/20 mb-6">
     <CardContent className="p-6">
@@ -252,62 +120,280 @@ const WorkItemCard = ({ item }: { item: WorkItemProps }) => (
         </div>
         {/* image */}
         <div className="w-full md:w-1/2 order-1 md:order-2">
-          <div className="relative h-72 sm:h-96 bg-gray-700 rounded-lg overflow-hidden">
-            <Image
-              src={item?.image}
-              alt={item.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          {item.image && ( // Conditionally render image block
+            <div className="relative h-72 sm:h-96 bg-gray-700 rounded-lg overflow-hidden">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
         </div>
       </div>
     </CardContent>
   </Card>
 );
 
+// Updated component for publication display within a Card
+const PublicationItem = ({ item }: { item: WorkItemProps }) => (
+  <Card className="bg-bodyColour border-lightSky/20 mb-6">
+    {" "}
+    {/* Added Card */}
+    <CardContent className="p-6 space-y-3">
+      {" "}
+      {/* Added CardContent & padding */}
+      <h3 className="text-xl font-bold leading-none text-white group-hover:text-lightSky hoverEffect">
+        {item.title}
+      </h3>
+      <p className="text-white/60 text-sm leading-normal">{item.description}</p>
+      <ul className="flex flex-wrap gap-2 items-center pt-1">
+        {item.stack?.map((tag: string, index: number) => (
+          <li
+            key={index}
+            className="text-xs text-lightSky bg-lightSky/10 px-2 py-1 rounded"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
+      {item.liveUrl && (
+        <div className="pt-2">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="bg-lightSky/5 text-white/80 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect p-1.5"
+                >
+                  <Link
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    <ArrowUpRight className="h-4 w-4" />
+                    <span className="text-xs">View Publication</span>
+                  </Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent className="bg-white text-black font-semibold">
+                <p>View Publication</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      )}
+    </CardContent>
+  </Card>
+);
+
+interface ConferenceTimelineProps {
+  presentations: WorkItemProps[];
+}
+
+const ConferenceTimeline = ({ presentations }: ConferenceTimelineProps) => {
+  const parseStack = (stack: string[]) => {
+    const date = stack[stack.length - 1];
+    const organizer = stack[0];
+    const location = stack.length === 3 ? stack[1] : null;
+    return { date, organizer, location };
+  };
+
+  return (
+    <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-lightSky/30">
+      {presentations.map((item) => {
+        const { date, organizer, location } = parseStack(item.stack);
+        return (
+          <div
+            key={item.id}
+            className="relative grid grid-cols-[auto_1fr] items-start gap-x-4 pb-8 last:pb-0"
+          >
+            {/* Timeline Marker */}
+            <div className="absolute left-0 top-0.5 -translate-x-1/2 transform">
+              <div className="h-3 w-3 rounded-full bg-lightSky"></div>
+            </div>
+
+            {/* Content */}
+            <div className="col-start-2 space-y-1">
+              {/* Date */}
+              <time className="text-sm font-semibold leading-none text-lightSky/80">
+                {date}
+              </time>
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              {/* Organizer & Location */}
+              <p className="text-sm text-white/60">
+                {organizer} {location && `• ${location}`}
+              </p>
+              {/* Optional Description (Could be added back if needed) */}
+              {/* <p className="text-sm text-white/50 mt-1">{item.description}</p> */}
+
+              {/* Links (Optional) */}
+              {(item.liveUrl || item.githubUrl) && (
+                <div className="flex items-center space-x-3 pt-2">
+                  {item.liveUrl && (
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="bg-lightSky/5 text-white/70 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect p-1.5"
+                          >
+                            <Link
+                              href={item.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <ArrowUpRight className="h-4 w-4" />
+                              <span className="sr-only">View Details</span>
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-white text-black font-semibold">
+                          <p>View Details</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  )}
+                  {item.githubUrl && (
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="bg-lightSky/5 text-white/70 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect p-1.5"
+                          >
+                            <Link
+                              href={item.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Github className="h-4 w-4" />
+                              <span className="sr-only">
+                                View GitHub Repository
+                              </span>
+                            </Link>
+                          </Button>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-white text-black font-semibold">
+                          <p>View GitHub Repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const WorkPage = () => {
+  // Calculate counts
+  const projectCount = projects.length;
+  const presentationCount = conferencePresentations.length; // Use imported data
+  const publicationCount = researchPublications.length;
+
+  // Sort presentations by date descending
+  const sortedConferencePresentations = [...conferencePresentations].sort(
+    (a, b) => {
+      const dateA = Date.parse(a.stack[a.stack.length - 1]);
+      const dateB = Date.parse(b.stack[b.stack.length - 1]);
+      if (isNaN(dateA)) return 1;
+      if (isNaN(dateB)) return -1;
+      return dateB - dateA;
+    }
+  );
+
   return (
     <div className="py-8">
       <PageLayout>
-        {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white">
-          My Work
-        </h1> */}
         <Tabs
           defaultValue="projects"
           className="w-full flex flex-col md:flex-row gap-6 md:gap-10"
         >
-          <TabsList className="flex flex-col md:flex-col h-full bg-transparent md:w-64 gap-4 border-none p-0">
-            <TabsTrigger
-              value="projects"
-              className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
-            >
-              <div className="flex items-center gap-1.5 md:gap-3">
-                <FolderKanban className="w-4 h-4 md:h-5 md:w-5" />
-                Projects
-              </div>
-            </TabsTrigger>
-            <TabsTrigger
-              value="presentations"
-              className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
-            >
-              <div className="flex items-center gap-1.5 md:gap-3">
-                <Presentation className="w-4 h-4 md:h-5 md:w-5" />
-                Presentations
-              </div>
-            </TabsTrigger>
-            <TabsTrigger
-              value="publications"
-              className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
-            >
-              <div className="flex items-center gap-1.5 md:gap-3">
-                <FileText className="w-4 h-4 md:h-5 md:w-5" />
-                Publications
-              </div>
-            </TabsTrigger>
-          </TabsList>
+          {/* Left Sidebar Wrapper for TabsList and Summary Cards */}
+          <div className="flex flex-col w-full md:w-64 gap-8">
+            <TabsList className="flex flex-col h-auto bg-transparent gap-4 border-none p-0">
+              <TabsTrigger
+                value="projects"
+                className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
+              >
+                <div className="flex items-center gap-1.5 md:gap-3">
+                  <FolderKanban className="w-4 h-4 md:h-5 md:w-5" />
+                  Projects
+                </div>
+              </TabsTrigger>
+              <TabsTrigger
+                value="presentations"
+                className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
+              >
+                <div className="flex items-center gap-1.5 md:gap-3">
+                  <Presentation className="w-4 h-4 md:h-5 md:w-5" />
+                  Presentations
+                </div>
+              </TabsTrigger>
+              <TabsTrigger
+                value="publications"
+                className="w-full py-2.5 bg-white/10 text-white data-[state=active]:bg-hoverColor hover:bg-lightSky/50 text-xs sm:text-sm"
+              >
+                <div className="flex items-center gap-1.5 md:gap-3">
+                  <FileText className="w-4 h-4 md:h-5 md:w-5" />
+                  Publications
+                </div>
+              </TabsTrigger>
+            </TabsList>
 
+            {/* Summary Cards Stack */}
+            <div className="flex flex-col gap-6">
+              {/* Projects Card */}
+              <Card className="bg-bodyColour border-lightSky/20">
+                <CardContent className="p-4 flex flex-col items-center justify-center">
+                  <h3 className="text-md font-semibold text-lightSky mb-1">
+                    Projects
+                  </h3>
+                  <p className="text-3xl font-bold text-white">
+                    {projectCount}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Presentations Card */}
+              <Card className="bg-bodyColour border-lightSky/20">
+                <CardContent className="p-4 flex flex-col items-center justify-center">
+                  <h3 className="text-md font-semibold text-lightSky mb-1">
+                    Presentations
+                  </h3>
+                  <p className="text-3xl font-bold text-white">
+                    {presentationCount}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Publications Card */}
+              <Card className="bg-bodyColour border-lightSky/20">
+                <CardContent className="p-4 flex flex-col items-center justify-center">
+                  <h3 className="text-md font-semibold text-lightSky mb-1">
+                    Publications
+                  </h3>
+                  <p className="text-3xl font-bold text-white">
+                    {publicationCount}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Right Content Pane */}
           <div className="flex-1 min-h-[400px]">
             <TabsContent value="projects">
               <div className="grid grid-cols-1 gap-8">
@@ -318,17 +404,16 @@ const WorkPage = () => {
             </TabsContent>
 
             <TabsContent value="presentations">
-              <div className="grid grid-cols-1 gap-8">
-                {conferencePresentations.map((presentation) => (
-                  <WorkItemCard key={presentation.id} item={presentation} />
-                ))}
-              </div>
+              <ConferenceTimeline
+                presentations={sortedConferencePresentations} // Pass sorted data here
+              />
             </TabsContent>
 
             <TabsContent value="publications">
-              <div className="grid grid-cols-1 gap-8">
+              {/* Use PublicationItem within a simple div container */}
+              <div>
                 {researchPublications.map((publication) => (
-                  <WorkItemCard key={publication.id} item={publication} />
+                  <PublicationItem key={publication.id} item={publication} />
                 ))}
               </div>
             </TabsContent>

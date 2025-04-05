@@ -92,7 +92,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} antialiased text-white/80`}>
+      <body
+        className={`${raleway.variable} antialiased bg-bodyColour text-white/80`}
+      >
         <PostHogProvider>
           <Header />
           <StairTransition />
