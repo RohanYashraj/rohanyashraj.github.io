@@ -20,11 +20,24 @@ import {
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StaticImageData } from "next/image";
 
 // Import icons for tabs
 import { FolderKanban, Presentation, FileText } from "lucide-react";
 
-const projects = [
+// Define interface for work items
+interface WorkItemProps {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  stack: string[];
+  image: StaticImageData;
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+const projects: WorkItemProps[] = [
   {
     id: "01",
     title: "SOA Research",
@@ -94,7 +107,7 @@ const projects = [
 ];
 
 // Data for Conference Presentations
-const conferencePresentations = [
+const conferencePresentations: WorkItemProps[] = [
   {
     id: "CP01",
     title: "Interpretable ML for Health Insurance Fraud",
@@ -102,8 +115,8 @@ const conferencePresentations = [
     description:
       "Presented findings on developing interpretable machine learning frameworks for detecting fraudulent health insurance claims at the Annual Actuarial Conclave.",
     stack: ["SOA Conclave 2023", "Mumbai"],
-    image: projectOne, // Replace with actual image if available
-    liveUrl: "", // Link to presentation slides or recording
+    image: projectOne,
+    liveUrl: "",
     githubUrl: "",
   },
   {
@@ -113,14 +126,14 @@ const conferencePresentations = [
     description:
       "Discussed the synergy of machine learning models and business rule triggers in enhancing fraud detection accuracy in health insurance at the CAS Spring Meeting.",
     stack: ["CAS Meeting 2022", "Virtual"],
-    image: projectTwo, // Replace with actual image if available
-    liveUrl: "", // Link to presentation slides or recording
+    image: projectTwo,
+    liveUrl: "",
     githubUrl: "",
   },
 ];
 
 // Data for Research Publications
-const researchPublications = [
+const researchPublications: WorkItemProps[] = [
   {
     id: "RP01",
     title:
@@ -129,8 +142,8 @@ const researchPublications = [
     description:
       "Published research detailing a framework for building transparent and understandable ML models for health insurance fraud detection.",
     stack: ["Journal of Actuarial Science", "2023"],
-    image: projectOne, // Replace with actual image if available
-    liveUrl: "", // Link to publication DOI or page
+    image: projectOne,
+    liveUrl: "",
     githubUrl: "",
   },
   {
@@ -141,14 +154,14 @@ const researchPublications = [
     description:
       "Paper demonstrating the improved performance of fraud detection systems when combining machine learning predictions with predefined business rules.",
     stack: ["Insurance: Mathematics and Economics", "2022"],
-    image: projectTwo, // Replace with actual image if available
-    liveUrl: "", // Link to publication DOI or page
+    image: projectTwo,
+    liveUrl: "",
     githubUrl: "",
   },
 ];
 
 // Reusable component to render a single work item card
-const WorkItemCard = ({ item }: { item: any }) => (
+const WorkItemCard = ({ item }: { item: WorkItemProps }) => (
   <Card className="bg-bodyColour border-lightSky/20 mb-6">
     <CardContent className="p-6">
       <div className="flex flex-col md:flex-row md:items-center md:space-x-8 group">
