@@ -5,7 +5,7 @@ import Container from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, Download } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 
@@ -41,9 +41,10 @@ const Header = () => {
             href={"/resume.pdf"}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect"
+            className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black hoverEffect flex items-center gap-2"
           >
-            Hire Me
+            CV
+            <Download className="w-4 h-4" />
           </Link>
         </div>
         <button
