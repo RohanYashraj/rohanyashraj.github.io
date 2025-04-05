@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import Title from "@/components/Title";
 import { Separator } from "@/components/ui/separator";
-import { servicesData } from "@/constants";
+import { servicesData } from "@/data/servicesData";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 

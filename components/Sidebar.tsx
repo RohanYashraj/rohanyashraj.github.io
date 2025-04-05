@@ -2,7 +2,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import { X, Download } from "lucide-react";
 import React from "react";
 import Logo from "./Logo";
-import { navbarData } from "@/constants";
+import { navbarData } from "@/data/navbarData";
 import Link from "next/link";
 import SocialLinks from "./SocialLinks";
 

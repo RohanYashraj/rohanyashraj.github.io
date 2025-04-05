@@ -1,6 +1,6 @@
 "use client";
 
-import { navbarData } from "@/constants";
+import { navbarData } from "@/data/navbarData";
 import Container from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
