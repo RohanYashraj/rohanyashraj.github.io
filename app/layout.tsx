@@ -131,13 +131,11 @@ export default function RootLayout({
         <PostHogProvider>
           <Header />
           <StairTransition />
-          <PageTransition>
-            {children}
-            <Analytics />
-            <SpeedInsights />
-          </PageTransition>
+          <PageTransition>{children}</PageTransition>
           <Toaster />
         </PostHogProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
