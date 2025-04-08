@@ -7,6 +7,7 @@ import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
 import { PostHogProvider } from "./providers";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
@@ -133,6 +134,7 @@ export default function RootLayout({
           <PageTransition>
             {children}
             <Analytics />
+            <SpeedInsights />
           </PageTransition>
           <Toaster />
         </PostHogProvider>
