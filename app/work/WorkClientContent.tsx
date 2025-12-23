@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import PageLayout from "@/components/PageLayout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,6 +13,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import ScrollTracker from "@/components/ScrollTracker";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // Import icons for tabs
@@ -30,115 +32,117 @@ import {
 // const sortedConferencePresentations = [...conferencePresentations].sort(...);
 
 // Reusable component to render a single work item card (Used for Projects)
-const WorkItemCard = ({ item }: { item: WorkItemProps }) => (
-  <Card className="bg-bodyColour border-lightSky/20 mb-6">
-    <CardContent className="p-6">
-      <div className="flex flex-col md:flex-row md:items-center md:space-x-8 group">
-        {/* description */}
-        <div className="w-full md:w-1/2 order-2 md:order-1 mb-8 md:mb-0">
-          <div className="space-y-3 md:space-y-6 mt-4 md:mt-0">
-            <h3 className="text-xl md:text-2xl font-bold leading-none text-white group-hover:text-lightSky hoverEffect">
-              {item?.title}
-            </h3>
-            <p className="text-white/60 text-sm md:text-base leading-6 md:leading-normal">
-              {item?.description}
-            </p>
-            <ul className="flex flex-wrap gap-2 md:gap-4 items-center">
-              {item?.stack?.map((tag: string, index: number) => (
-                <li
-                  key={index}
-                  className="text-xs md:text-sm text-lightSky bg-lightSky/10 px-2 py-1 rounded"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            <Separator className="bg-gray-700" />
-            <div className="flex items-center space-x-4">
-              {item.liveUrl && (
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-lightSky/5 text-white/80 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect"
-                      >
-                        <Link
-                          href={item.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+const WorkItemCard = ({ item }: { item: WorkItemProps }) => {
+  return (
+    <Card className="bg-bodyColour border-lightSky/20 mb-6">
+      <CardContent className="p-6">
+        <div className="flex flex-col md:flex-row md:items-center md:space-x-8 group">
+          {/* description */}
+          <div className="w-full md:w-1/2 order-2 md:order-1 mb-8 md:mb-0">
+            <div className="space-y-3 md:space-y-6 mt-4 md:mt-0">
+              <h3 className="text-xl md:text-2xl font-bold leading-none text-white group-hover:text-lightSky hoverEffect">
+                {item?.title}
+              </h3>
+              <p className="text-white/60 text-sm md:text-base leading-6 md:leading-normal">
+                {item?.description}
+              </p>
+              <ul className="flex flex-wrap gap-2 md:gap-4 items-center">
+                {item?.stack?.map((tag: string, index: number) => (
+                  <li
+                    key={index}
+                    className="text-xs md:text-sm text-lightSky bg-lightSky/10 px-2 py-1 rounded"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+              <Separator className="bg-gray-700" />
+              <div className="flex items-center space-x-4">
+                {item.liveUrl && (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="bg-lightSky/5 text-white/80 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect"
                         >
-                          <ArrowUpRight />
-                          <span className="sr-only">
-                            View Live Project/Link
-                          </span>
-                        </Link>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-white text-black font-semibold">
-                      <p>
-                        View{" "}
-                        {item.category === "Research Publication"
-                          ? "Publication"
-                          : item.category === "Conference Presentation"
-                          ? "Details"
-                          : "Live Project"}
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              )}
-              {item.githubUrl && (
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-lightSky/5 text-white/80 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect"
-                      >
-                        <Link
-                          href={item.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          <Link
+                            href={item.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ArrowUpRight />
+                            <span className="sr-only">
+                              View Live Project/Link
+                            </span>
+                          </Link>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-white text-black font-semibold">
+                        <p>
+                          View{" "}
+                          {item.category === "Research Publication"
+                            ? "Publication"
+                            : item.category === "Conference Presentation"
+                            ? "Details"
+                            : "Live Project"}
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )}
+                {item.githubUrl && (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="bg-lightSky/5 text-white/80 border border-lightSky/20 hover:bg-lightSky/20 hover:border-lightSky hover:text-hoverColor hoverEffect"
                         >
-                          <Github />
-                          <span className="sr-only">
-                            View GitHub Repository
-                          </span>
-                        </Link>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-white text-black font-semibold">
-                      <p>View GitHub Repository</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              )}
+                          <Link
+                            href={item.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github />
+                            <span className="sr-only">
+                              View GitHub Repository
+                            </span>
+                          </Link>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-white text-black font-semibold">
+                        <p>View GitHub Repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                )}
+              </div>
             </div>
           </div>
+          {/* image */}
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            {item.image && (
+              <div className="relative h-72 sm:h-96 bg-gray-700 rounded-lg overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={`${item.title} project screenshot`}
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                />
+              </div>
+            )}
+          </div>
         </div>
-        {/* image */}
-        <div className="w-full md:w-1/2 order-1 md:order-2">
-          {item.image && ( // Conditionally render image block
-            <div className="relative h-72 sm:h-96 bg-gray-700 rounded-lg overflow-hidden">
-              <Image
-                src={item.image}
-                alt={`${item.title} project screenshot`}
-                fill
-                className="object-cover"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-              />
-            </div>
-          )}
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
+      </CardContent>
+    </Card>
+  );
+};
 
 // Updated component for publication display within a Card
 const PublicationItem = ({ item }: { item: WorkItemProps }) => (
@@ -300,7 +304,7 @@ const ConferenceTimeline = ({ presentations }: ConferenceTimelineProps) => {
   );
 };
 
-const WorkPage = () => {
+export default function WorkClientContent() {
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") || "projects"; // Get tab param or default
 
@@ -322,6 +326,7 @@ const WorkPage = () => {
 
   return (
     <div className="py-8">
+      <ScrollTracker />
       <PageLayout>
         <Tabs
           defaultValue={initialTab} // Use initialTab as defaultValue
@@ -428,6 +433,4 @@ const WorkPage = () => {
       </PageLayout>
     </div>
   );
-};
-
-export default WorkPage;
+}

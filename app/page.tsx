@@ -11,7 +11,10 @@ import Link from "next/link";
 import { motion } from "framer-motion"; // Added motion
 import { TypeAnimation } from "react-type-animation"; // Added TypeAnimation
 import PageLayout from "@/components/PageLayout";
+import { useAnalytics } from "@/hooks/use-analytics";
 export default function Home() {
+  const { trackButtonClick, trackNavigation } = useAnalytics();
+
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 15 },
@@ -103,7 +106,14 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-3 items-center"
             >
               {/* Updated Resume Button with hover effect */}
-              <Link href={"/resume"} rel="noopener noreferrer">
+              <Link
+                href={"/resume"}
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackButtonClick("view_resume", "homepage_hero");
+                  trackNavigation("/resume", "homepage_cta");
+                }}
+              >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -115,7 +125,14 @@ export default function Home() {
                 </motion.div>
               </Link>
               {/* Added Contact Button with hover effect */}
-              <Link href={"/contact"} rel="noopener noreferrer">
+              <Link
+                href={"/contact"}
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackButtonClick("contact_me", "homepage_hero");
+                  trackNavigation("/contact", "homepage_cta");
+                }}
+              >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
