@@ -6,6 +6,9 @@ import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
 import { PostHogProvider } from "./providers";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import ScrollTracker from "@/components/ScrollTracker";
 
 export const metadata: Metadata = {
   title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
@@ -150,11 +153,14 @@ export default function RootLayout({
         className={`${raleway.variable} antialiased bg-bodyColour text-white/80`}
       >
         <PostHogProvider>
+          <ScrollTracker />
           <Header />
           <StairTransition />
           <PageTransition>{children}</PageTransition>
           <Toaster />
         </PostHogProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
