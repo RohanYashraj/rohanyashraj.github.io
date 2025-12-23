@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -6,8 +6,6 @@ import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
 import { PostHogProvider } from "./providers";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
@@ -32,13 +30,16 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
+  metadataBase: new URL("https://rohanyashraj.github.io"),
+  applicationName: "Dr. Rohan Yashraj Gupta Portfolio",
+  referrer: "origin-when-cross-origin",
   twitter: {
     card: "summary_large_image",
     title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     description:
       "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI.",
     creator: "@Rohan_Yashraj", // Replace with your actual Twitter handle
-    images: ["https://rohanyashraj.github.io/profile.jpg"], // Relative path for Twitter
+    images: ["/profile.jpg"], // Using relative path for better performance
   },
   openGraph: {
     title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
@@ -49,10 +50,11 @@ export const metadata: Metadata = {
     siteName: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg", // Replace with actual image URL
+        url: "/profile.jpg", // Using relative path for better performance
         width: 1200,
         height: 1200,
-        alt: "Portfolio Image",
+        alt: "Dr. Rohan Yashraj Gupta - Actuary & Data Scientist",
+        type: "image/jpeg",
       },
     ],
     locale: "en_US",
@@ -64,12 +66,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://rohanyashraj.github.io",
   },
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#00ff99" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1c22" },
+  ],
 };
 
 const raleway = localFont({
   src: "./fonts/Raleway.woff2",
   variable: "--font-raleway",
   weight: "100 900",
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export default function RootLayout({
@@ -116,7 +133,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="cKguk44hgHZadmFF1Lm2h6hmqgvCpfIXs82nYjvNz0E" />
+        <meta
+          name="google-site-verification"
+          content="cKguk44hgHZadmFF1Lm2h6hmqgvCpfIXs82nYjvNz0E"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
@@ -135,8 +155,6 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
           <Toaster />
         </PostHogProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

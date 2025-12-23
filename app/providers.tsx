@@ -8,11 +8,19 @@ import PostHogPageView from "./PostHogPageView";
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "", {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "",
-      person_profiles: "always",
-      capture_pageview: true, // Disable automatic pageview capture, as we capture manually
-    });
+    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+    const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
+
+    // Only initialize PostHog if we have a valid key
+    if (posthogKey && posthogKey.trim() !== "") {
+      posthog.init(posthogKey, {
+        api_host: posthogHost || "https://app.posthog.com",
+        person_profiles: "always",
+        capture_pageview: true, // Disable automatic pageview capture, as we capture manually
+      });
+    } else {
+      console.log("PostHog initialization skipped: No API key provided");
+    }
   }, []);
 
   return (

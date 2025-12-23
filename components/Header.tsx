@@ -57,7 +57,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black transition-colors duration-300 ease-in-out inline-flex items-center gap-2"
             >
-              Download Resume
+              Resume
               <Download className="w-4 h-4" />
             </Link>
           </motion.div>
