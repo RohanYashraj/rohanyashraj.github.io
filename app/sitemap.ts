@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/work",
     "/resume",
+    "/resume/view",
     "/contact",
     "/services",
     // Add other static routes as needed
@@ -17,8 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemapEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: `${baseUrl}${route === "/" ? "" : route}`,
-    changeFrequency: "monthly", // Adjust as needed ('always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never')
-    priority: route === "/" ? 1.0 : 0.8, // Adjust priority (0.0 to 1.0)
+    lastModified: new Date(),
+    changeFrequency: route === "/" ? "weekly" : "monthly",
+    priority:
+      route === "/"
+        ? 1.0
+        : route.includes("work") || route.includes("services")
+        ? 0.9
+        : 0.8,
   }));
 
   // Add dynamic routes if any (e.g., blog posts, project details)

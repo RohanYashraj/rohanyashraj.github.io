@@ -1,2 +1,11 @@
 User-agent: *
-Allow: / 
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Performance optimization
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://rohanyashraj.github.io/sitemap.xml 
