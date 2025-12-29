@@ -40,7 +40,8 @@ const ContactForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Track form submission attempt
+    // Track funnel step
+    trackFunnelStep(1, "attempt", "contact_funnel");
     trackFormStart("contact_form");
 
     try {
@@ -83,6 +84,7 @@ const ContactForm = () => {
           .then(
             (response) => {
               console.log("SUCCESS!", response.status, response.text);
+              trackFunnelStep(2, "success", "contact_funnel");
               trackFormSubmit("contact_form", true);
               setSuccess(true);
               setStatus("Success! Your message has been sent.");

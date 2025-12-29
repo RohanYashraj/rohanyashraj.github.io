@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useAnalytics } from "@/hooks/use-analytics";
 
 const Header = () => {
-  const { trackNavigation, trackButtonClick } = useAnalytics();
+  const { trackNavigation, trackButtonClick, trackFunnelStep } = useAnalytics();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
 
@@ -23,6 +23,7 @@ const Header = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 300 }}
+          onClick={() => trackButtonClick("logo_click", "header")}
         >
           <Logo title="Rohan" subtitle="." />
         </motion.div>

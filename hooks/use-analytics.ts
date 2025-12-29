@@ -185,6 +185,38 @@ export const useAnalytics = () => {
     });
   };
 
+  // Section visibility tracking (e.g. for long pages)
+  const trackSectionView = (sectionName: string, context?: string) => {
+    posthog?.capture("section_viewed", {
+      section_name: sectionName,
+      context,
+      page: pathname,
+      timestamp: new Date().toISOString(),
+    });
+  };
+
+  // Hover/Interaction tracking
+  const trackItemHover = (itemName: string, itemType: string, context?: string) => {
+    posthog?.capture("item_hover", {
+      item_name: itemName,
+      item_type: itemType,
+      context,
+      page: pathname,
+      timestamp: new Date().toISOString(),
+    });
+  };
+
+  // Funnel tracking helper
+  const trackFunnelStep = (stepNumber: number, stepName: string, funnelName: string) => {
+    posthog?.capture("funnel_step", {
+      step_number: stepNumber,
+      step_name: stepName,
+      funnel_name: funnelName,
+      page: pathname,
+      timestamp: new Date().toISOString(),
+    });
+  };
+
   return {
     trackNavigation,
     trackButtonClick,
@@ -203,5 +235,8 @@ export const useAnalytics = () => {
     trackError,
     identifyUser,
     trackFeatureUsage,
+    trackSectionView,
+    trackItemHover,
+    trackFunnelStep,
   };
 };
