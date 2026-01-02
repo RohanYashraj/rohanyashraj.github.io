@@ -7,12 +7,9 @@ import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import SuccessMsg from "./SuccessMsg";
 import emailjs from "@emailjs/browser";
-import { useAnalytics } from "@/hooks/use-analytics";
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const { trackFormStart, trackFormSubmit, trackFormFieldFocus, trackError } =
-    useAnalytics();
   const [status, setStatus] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -33,26 +30,15 @@ const ContactForm = () => {
     }));
   };
 
-  const handleFieldFocus = (fieldName: string) => {
-    trackFormFieldFocus("contact_form", fieldName);
-  };
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Track funnel step
-    trackFunnelStep(1, "attempt", "contact_funnel");
-    trackFormStart("contact_form");
 
     try {
       setLoading(true);
       if (!formData.Name.trim() || !formData.Email.trim()) {
-        const errorMsg = "Please input your name and email to continue";
-        trackFormSubmit("contact_form", false, errorMsg);
-        trackError(errorMsg, "form_validation");
         toast({
           title: "Error: Something is wrong",
-          description: errorMsg,
+          description: "Please input your name and email to continue",
           variant: "destructive",
         });
         setLoading(false);
@@ -84,8 +70,6 @@ const ContactForm = () => {
           .then(
             (response) => {
               console.log("SUCCESS!", response.status, response.text);
-              trackFunnelStep(2, "success", "contact_funnel");
-              trackFormSubmit("contact_form", true);
               setSuccess(true);
               setStatus("Success! Your message has been sent.");
               setFormData({
@@ -99,12 +83,6 @@ const ContactForm = () => {
             },
             (error) => {
               console.log("FAILED...", error);
-              const errorMsg = "EmailJS service error";
-              trackFormSubmit("contact_form", false, errorMsg);
-              trackError(error.toString(), "emailjs_service", {
-                service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                response_status: error.status,
-              });
               setStatus("Error! Unable to send your message.");
               toast({
                 title: "Server Error! Something went wrong.",
@@ -151,7 +129,6 @@ const ContactForm = () => {
                 placeholder="Your Name"
                 value={formData.Name}
                 onChange={handleChange}
-                onFocus={() => handleFieldFocus("Name")}
                 disabled={loading}
                 className="disabled:bg-white/5"
               />
@@ -163,7 +140,6 @@ const ContactForm = () => {
                 placeholder="Email Address"
                 value={formData.Email}
                 onChange={handleChange}
-                onFocus={() => handleFieldFocus("Email")}
                 disabled={loading}
                 className="disabled:bg-white/5"
               />
@@ -176,7 +152,6 @@ const ContactForm = () => {
                 placeholder="Phone number"
                 value={formData.Phone}
                 onChange={handleChange}
-                onFocus={() => handleFieldFocus("Phone")}
                 disabled={loading}
                 className="disabled:bg-white/5"
               />
@@ -187,7 +162,6 @@ const ContactForm = () => {
                 placeholder="Address"
                 value={formData.Address}
                 onChange={handleChange}
-                onFocus={() => handleFieldFocus("Address")}
                 disabled={loading}
                 className="disabled:bg-white/5"
               />
@@ -198,7 +172,6 @@ const ContactForm = () => {
               rows={5}
               value={formData.Message}
               onChange={handleChange}
-              onFocus={() => handleFieldFocus("Message")}
               disabled={loading}
               className="disabled:bg-white/5"
             />

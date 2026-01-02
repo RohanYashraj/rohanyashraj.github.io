@@ -9,10 +9,8 @@ import { Menu, Download } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useAnalytics } from "@/hooks/use-analytics";
 
 const Header = () => {
-  const { trackNavigation, trackButtonClick, trackFunnelStep } = useAnalytics();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
 
@@ -23,7 +21,6 @@ const Header = () => {
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 300 }}
-          onClick={() => trackButtonClick("logo_click", "header")}
         >
           <Logo title="Rohan" subtitle="." />
         </motion.div>
@@ -35,7 +32,6 @@ const Header = () => {
             <Link
               key={item?.title}
               href={item?.href}
-              onClick={() => trackNavigation(item?.href, "header_nav")}
               className={`relative group overflow-x-hidden px-2 py-1 rounded-md transition-colors duration-300 ease-in-out hoverEffect ${
                 pathname === item?.href
                   ? "text-hoverColor bg-lightSky/5"
@@ -59,10 +55,6 @@ const Header = () => {
             <Link
               href={"/resume/view"}
               rel="noopener noreferrer"
-              onClick={() => {
-                trackButtonClick("resume_view", "header");
-                trackNavigation("/resume/view", "header_cta");
-              }}
               className="text-sm bg-lightSky/10 px-4 py-2 rounded-md border border-hoverColor/10 hover:bg-hoverColor hover:border-hoverColor hover:text-black transition-colors duration-300 ease-in-out inline-flex items-center gap-2"
             >
               Resume
@@ -74,9 +66,6 @@ const Header = () => {
           aria-label="Toggle Menu"
           onClick={() => {
             setIsSidebarOpen(!isSidebarOpen);
-            trackButtonClick("mobile_menu_toggle", "header", {
-              isOpen: !isSidebarOpen,
-            });
           }}
           className="inline-flex md:hidden relative hover:text-hoverColor hoverEffect p-1 rounded-md hover:bg-lightSky/10 transition-colors duration-300"
         >

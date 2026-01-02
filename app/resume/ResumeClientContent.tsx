@@ -14,8 +14,7 @@ import {
   Languages,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import { useAnalytics } from "@/hooks/use-analytics";
+import { useState } from "react";
 
 // Import shared experience data
 import { experienceData, ExperienceItem } from "@/data/resumeData"; // Adjust path if needed
@@ -195,7 +194,6 @@ const SkillLevelBar = ({ level }: { level: number }) => {
 };
 
 const ResumePage = () => {
-  const { trackItemHover, trackTabSwitch } = useAnalytics();
   // State for experience timeline
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -260,7 +258,6 @@ const ResumePage = () => {
         <Tabs
           defaultValue="experience"
           className="w-full flex flex-col md:flex-row gap-6 md:gap-10"
-          onValueChange={(value) => trackTabSwitch("unknown", value, "resume_tabs")}
         >
           <TabsList className="flex flex-col md:flex-col h-full bg-transparent md:w-64 gap-4">
             {tabMenu?.map((item) => (
@@ -307,10 +304,7 @@ const ResumePage = () => {
                     <li
                       key={index}
                       className="relative group bg-primary/5 dark:bg-primary/10 p-4 rounded-lg shadow-sm cursor-pointer transition-all duration-300 hover:shadow-md"
-                      onMouseEnter={() => {
-                        setExpandedIndex(index);
-                        trackItemHover(item.role, "experience_item", item.company);
-                      }} // Expand on hover enter
+                      onMouseEnter={() => setExpandedIndex(index)} // Expand on hover enter
                       onMouseLeave={() => setExpandedIndex(null)} // Collapse on hover leave
                     >
                       {/* Timestamp Dot */}

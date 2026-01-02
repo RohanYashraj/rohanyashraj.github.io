@@ -13,13 +13,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import ScrollTracker from "@/components/ScrollTracker";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // Import icons for tabs
 import { FolderKanban, Presentation, FileText } from "lucide-react";
 import { useSearchParams } from "next/navigation"; // Import useSearchParams
-import { useAnalytics } from "@/hooks/use-analytics";
 
 // Import shared data
 import {
@@ -306,7 +304,6 @@ const ConferenceTimeline = ({ presentations }: ConferenceTimelineProps) => {
 };
 
 export default function WorkClientContent() {
-  const { trackTabSwitch, trackProjectView } = useAnalytics();
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") || "projects"; // Get tab param or default
 
@@ -328,12 +325,10 @@ export default function WorkClientContent() {
 
   return (
     <div className="py-8">
-      <ScrollTracker />
       <PageLayout>
         <Tabs
           defaultValue={initialTab} // Use initialTab as defaultValue
           className="w-full flex flex-col md:flex-row gap-6 md:gap-10"
-          onValueChange={(value) => trackTabSwitch("unknown", value, "work_tabs")}
         >
           {/* Left Sidebar Wrapper for TabsList and Summary Cards */}
           <div className="flex flex-col w-full md:w-64 gap-8">
