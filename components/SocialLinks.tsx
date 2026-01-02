@@ -8,7 +8,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { useAnalytics } from "@/hooks/use-analytics";
 
 const socialData = [
   {
@@ -25,8 +24,6 @@ const socialData = [
 ];
 
 const SocialLinks = () => {
-  const { trackSocialClick } = useAnalytics();
-
   return (
     <TooltipProvider>
       <Tooltip>
@@ -38,7 +35,6 @@ const SocialLinks = () => {
                   <Link
                     href={item?.href}
                     target="_blank"
-                    onClick={() => trackSocialClick(item?.title, item?.href)}
                     aria-label={`Visit my ${item?.title} profile`}
                   >
                     <span aria-hidden="true">{item?.icon}</span>

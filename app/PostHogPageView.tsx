@@ -25,8 +25,7 @@ function PostHogPageView(): null {
   return null;
 }
 
-// Wrap this in Suspense to avoid the `useSearchParams` usage above
-// from deopting the whole app into client-side rendering
+// Wrap in Suspense to avoid deopting into client-side rendering
 // See https://nextjs.org/docs/messages/deopted-into-client-rendering
 export default function SuspendedPostHogPageView() {
   return (

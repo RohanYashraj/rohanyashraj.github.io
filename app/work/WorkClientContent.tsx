@@ -13,7 +13,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import ScrollTracker from "@/components/ScrollTracker";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // Import icons for tabs
@@ -326,7 +325,6 @@ export default function WorkClientContent() {
 
   return (
     <div className="py-8">
-      <ScrollTracker />
       <PageLayout>
         <Tabs
           defaultValue={initialTab} // Use initialTab as defaultValue
