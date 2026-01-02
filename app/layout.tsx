@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
+import { PostHogProvider } from "./providers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -150,10 +151,12 @@ export default function RootLayout({
       <body
         className={`${raleway.variable} antialiased bg-bodyColour text-white/80`}
       >
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
-        <Toaster />
+        <PostHogProvider>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+          <Toaster />
+        </PostHogProvider>
         <Analytics />
         <SpeedInsights />
       </body>
