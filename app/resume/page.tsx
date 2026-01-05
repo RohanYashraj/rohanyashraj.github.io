@@ -18,16 +18,16 @@ export const metadata: Metadata = {
     "Data Science Skills",
   ],
   alternates: {
-    canonical: "https://rohanyashraj.github.io/resume",
+    canonical: "https://rohanyashraj.com/resume",
   },
   openGraph: {
     title: "Resume | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "Detailed resume of Dr. Rohan Yashraj Gupta, FIA, FIAI: Experience, Education, Skills.",
-    url: "https://rohanyashraj.github.io/resume",
+    url: "https://rohanyashraj.com/resume",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg",
+        url: "https://rohanyashraj.com/profile.jpg",
         width: 1200,
         height: 1200,
         alt: "Resume - Dr. Rohan Yashraj Gupta, FIA, FIAI",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Resume | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "View the professional resume of Dr. Rohan Yashraj Gupta, FIA, FIAI.",
-    images: ["https://rohanyashraj.github.io/profile.jpg"],
+    images: ["https://rohanyashraj.com/profile.jpg"],
   },
 };
 

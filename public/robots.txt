@@ -8,4 +8,4 @@ Disallow: /admin/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://rohanyashraj.github.io/sitemap.xml 
+Sitemap: https://rohanyashraj.com/sitemap.xml 

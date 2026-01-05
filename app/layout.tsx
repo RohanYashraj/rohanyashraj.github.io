@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
-      url: "https://rohanyashraj.github.io",
+      url: "https://rohanyashraj.com",
     },
   ],
   creator: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
-  metadataBase: new URL("https://rohanyashraj.github.io"),
+  metadataBase: new URL("https://rohanyashraj.com"),
   applicationName: "Dr. Rohan Yashraj Gupta Portfolio",
   referrer: "origin-when-cross-origin",
   twitter: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     description:
       "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI. He specializes in Data Science and General Insurance.",
-    url: "https://rohanyashraj.github.io",
+    url: "https://rohanyashraj.com",
     type: "website",
     siteName: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://rohanyashraj.github.io",
+    canonical: "https://rohanyashraj.com",
   },
   manifest: "/manifest.json",
 };
@@ -100,7 +100,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Dr. Rohan Yashraj Gupta, FIA, FIAI | Actuary & Data Scientist",
-    url: "https://rohanyashraj.github.io",
+    url: "https://rohanyashraj.com",
     description:
       "Explore the actuarial journey, projects, and insights of Dr. Rohan Yashraj Gupta, FIA, FIAI. He specializes in Data Science and General Insurance.",
   };
@@ -110,7 +110,7 @@ export default function RootLayout({
     "@type": "Person",
     name: "Dr. Rohan Yashraj Gupta, FIA, FIAI",
     alternateName: "Rohan Gupta",
-    url: "https://rohanyashraj.github.io",
+    url: "https://rohanyashraj.com",
     jobTitle: "Actuary & Data Scientist", // You might want to make this more specific or add multiple
     worksFor: {
       "@type": "Organization",
@@ -127,7 +127,7 @@ export default function RootLayout({
       "https://twitter.com/Rohan_Yashraj", // Example
       // Add other relevant profiles (e.g., ResearchGate, Google Scholar)
     ],
-    image: "https://rohanyashraj.github.io/profile.jpg", // Ensure this image is optimized!
+    image: "https://rohanyashraj.com/profile.jpg", // Ensure this image is optimized!
     description:
       "Qualified General Insurance Actuary (FIA, FIAI) and Data Scientist with a PhD, specializing in fraud detection, predictive modeling, and technology transformation in the insurance sector.",
   };
