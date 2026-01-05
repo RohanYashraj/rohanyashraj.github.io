@@ -22,16 +22,16 @@ export const metadata: Metadata = {
     "FIAI",
   ],
   alternates: {
-    canonical: "https://rohanyashraj.github.io/services",
+    canonical: "https://rohanyashraj.com/services",
   },
   openGraph: {
     title: "Services | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "Actuarial and data science services offered by Dr. Rohan Yashraj Gupta, FIA, FIAI.",
-    url: "https://rohanyashraj.github.io/services",
+    url: "https://rohanyashraj.com/services",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg",
+        url: "https://rohanyashraj.com/profile.jpg",
         width: 1200,
         height: 1200,
         alt: "Services - Dr. Rohan Yashraj Gupta, FIA, FIAI",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Services | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "Actuarial and data science services offered by Dr. Rohan Yashraj Gupta, FIA, FIAI.",
-    images: ["https://rohanyashraj.github.io/profile.jpg"],
+    images: ["https://rohanyashraj.com/profile.jpg"],
   },
 };
 
@@ -65,7 +65,7 @@ const ServicesPage = () => {
         provider: {
           "@type": "Person",
           name: "Dr. Rohan Yashraj Gupta",
-          url: "https://rohanyashraj.github.io",
+          url: "https://rohanyashraj.com",
         },
         // Add relevant serviceType or category if applicable
         // e.g., "serviceType": "Actuarial Consulting"

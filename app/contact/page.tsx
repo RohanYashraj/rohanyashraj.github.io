@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     "FIAI Contact",
   ],
   alternates: {
-    canonical: "https://rohanyashraj.github.io/contact",
+    canonical: "https://rohanyashraj.com/contact",
   },
   openGraph: {
     title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "Contact Dr. Rohan Yashraj Gupta, FIA, FIAI for professional inquiries or collaborations.",
-    url: "https://rohanyashraj.github.io/contact",
+    url: "https://rohanyashraj.com/contact",
     images: [
       {
-        url: "https://rohanyashraj.github.io/profile.jpg",
+        url: "https://rohanyashraj.com/profile.jpg",
         width: 1200,
         height: 1200,
         alt: "Contact - Dr. Rohan Yashraj Gupta, FIA, FIAI",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Contact Me | Dr. Rohan Yashraj Gupta, FIA, FIAI",
     description:
       "Contact Dr. Rohan Yashraj Gupta, FIA, FIAI for professional inquiries or collaborations.",
-    images: ["https://rohanyashraj.github.io/profile.jpg"],
+    images: ["https://rohanyashraj.com/profile.jpg"],
   },
 };
 
